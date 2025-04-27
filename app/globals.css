@@ -148,9 +148,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Add this to override scroll behavior for navigation */
-html.navigation-scroll {
-  scroll-behavior: auto;
+/* Disable transform transition on touch devices for specific elements */
+@media (hover: none) and (pointer: coarse) {
+  .disable-transform-transition-on-touch {
+    transition-property: opacity, color, background-color, border-color, text-decoration-color, fill, stroke; /* Keep existing transitions, omit transform */
+  }
 }
 
 /* Add styles for the sidebar navigation */
@@ -579,5 +581,14 @@ html.navigation-scroll {
   /* For product title */
   color: #333333;
   line-height: 1.3;
+}
+
+/* Add styles for the sidebar navigation */
+@media (min-width: 1024px) {
+  scroll-behavior: auto;
+}
+
+html.navigation-scroll {
+  scroll-behavior: auto;
 }
 
