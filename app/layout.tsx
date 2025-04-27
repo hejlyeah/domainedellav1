@@ -29,6 +29,11 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
+        {/* eCellar CSS - Load base theme first, then custom overrides */}
+        <link rel="stylesheet" type="text/css" href="https://cdn.ecellar-rw.com/1/css/ecp-theme.css" />
+        <link rel="stylesheet" type="text/css" href="/acquire/styles/ecellar-custom.css" />
+        <link rel="stylesheet" type="text/css" href="/acquire/styles/ecellar-products.css" />
+        
         {/* Tock Initialization Script was removed from here */}
       </head>
       <body className={inter.className}>

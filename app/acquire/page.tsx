@@ -157,10 +157,11 @@ export default function Acquire() {
       <SiteHeader />
 
       {/* Add eCellar CSS links here - Load base theme first, then our custom overrides */}
-      <link rel="stylesheet" type="text/css" href="https://cdn.ecellar-rw.com/1/css/ecp-theme.css" />
+      {/* REMOVED: CSS links moved to layout.tsx */}
+      {/* <link rel="stylesheet" type="text/css" href="https://cdn.ecellar-rw.com/1/css/ecp-theme.css" /> */}
       {/* Load custom styles LAST to ensure overrides work. ecellar-custom.css imports ecellar-products.css */}
-      <link rel="stylesheet" type="text/css" href="/acquire/styles/ecellar-custom.css" />
-      <link rel="stylesheet" type="text/css" href="/acquire/styles/ecellar-products.css" />
+      {/* <link rel="stylesheet" type="text/css" href="/acquire/styles/ecellar-custom.css" /> */}
+      {/* <link rel="stylesheet" type="text/css" href="/acquire/styles/ecellar-products.css" /> */}
 
       {/* Dynamic spacer that adjusts to the height of the navbar */}
       <div ref={spacerRef} className="w-full"></div>
