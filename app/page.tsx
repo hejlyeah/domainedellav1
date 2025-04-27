@@ -61,7 +61,7 @@ const IMAGES = {
     alt: "Historical portrait in an elegant silver frame",
   },
   wines: {
-    src: "/images/home-sections/wines.jpg",
+    src: "/images/home-sections/wines.png",
     alt: "Domaine Della wine collection",
   },
   visit: {
