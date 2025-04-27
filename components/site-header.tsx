@@ -173,7 +173,7 @@ const SiteHeader = ({
               {/* Logo */}
               <Link href="/" className="group flex items-center">
                 <div className="relative w-[195px] h-[36px]">
-                  <div className="absolute inset-0 duration-200 ease-out">
+                  <div className="absolute inset-0">
                     <Logo
                       variant="white"
                       className="absolute inset-0 transition-opacity duration-200 group-hover:opacity-0"
