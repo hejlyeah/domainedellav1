@@ -171,22 +171,8 @@ const SiteHeader = ({
           <div className="px-6 w-full">
             <div className="flex h-16 items-center justify-between">
               {/* Logo */}
-              <Link
-                href="/"
-                className="group flex items-center"
-              >
-                <div className="relative w-[195px] h-[36px]">
-                  <div className="absolute inset-0 duration-200 ease-out">
-                    <Logo
-                      variant="white"
-                      className="absolute inset-0 transition-opacity duration-200 group-hover:opacity-0"
-                    />
-                    <Logo
-                      variant="red"
-                      className="absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                    />
-                  </div>
-                </div>
+              <Link href="/" className="group flex items-center">
+                <span className="text-white font-bold">Domaine Della Home</span>
               </Link>
 
               {/* Desktop Navigation */}
