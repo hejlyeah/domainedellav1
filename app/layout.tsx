@@ -4,11 +4,39 @@ import Script from "next/script"
 import { SiteFooter } from "@/components/site-footer"
 import "./globals.css"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  generator: 'v0.dev'
+export const metadata: Metadata = {
+  title: "Domaine Della Winery",
+  description: "Domaine Della Winery - Crafting exceptional wines.",
+  generator: 'v0.dev',
+  openGraph: {
+    title: "Domaine Della Winery",
+    description: "Domaine Della Winery - Crafting exceptional wines.",
+    url: 'https://www.domainedella.com',
+    siteName: 'Domaine Della',
+    images: [
+      {
+        url: '/og-cover.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Domaine Della Winery Barrel Room',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Domaine Della Winery",
+    description: "Domaine Della Winery - Crafting exceptional wines.",
+    images: ['/og-cover.jpg'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
