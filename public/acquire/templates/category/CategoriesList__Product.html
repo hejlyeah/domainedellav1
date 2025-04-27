@@ -1,0 +1,48 @@
+<div class="ecp-list-item {message:css_class}" data-ecp-id="{message:product_id}" role="listitem">
+    <h3><a href="{message:__CategoryWithProducts_link}" data-ecp-action="load-product" data-ecp-key="{message:slug}">{message:product_name}</a></h3>
+    <div class="ecp-html-subtitle" data-ecp-handle="feature_text">{message:feature_text}</div>
+    <div class="ecp-columns ecp-clearfix">
+      <div class="ecp-columns-left">
+        <a href="{message:__CategoryWithProducts_link}" data-ecp-action="load-product" data-ecp-key="{message:slug}"><img src="{message:image_1}" alt="{message:CategoryWithProducts/ImageAlt_template}"></a>
+      </div>
+      <div class="ecp-columns-right">
+        <span data-ecp-handle="discounted">
+          <span class="ecp-price-discounted" aria-label="{message:CategoryWithProducts/DiscountPriceLabel}">{currency:cart_discount_price}</span><span class="ecp-price-regular" aria-label="{message:CategoryWithProducts/RegularPriceLabel}">{currency:cart_regular_price}</span>
+        </span>
+        <span data-ecp-handle="not_discounted">
+          <div class="ecp-price" aria-label="{message:CategoryWithProducts/PriceLabel}">{currency:price}</div>
+        </span>
+        <div class="ecp-html-content">{message:display_title}</div>
+      </div>
+    </div>
+    <div class="ecp-section" data-ecp-handle="available">
+      <form class="ecp-form">
+        <div class="ecp-form-row ecp-clearfix">
+          <span class="ecp-form-row-col-25">
+            <select name="product_qty" aria-label="{message:CategoryWithProducts/ProductQuantityLabel_template}">
+              <!-- | CategoryWithProducts_Option template | -->
+            </select>
+          </span>
+          <span class="ecp-form-row-col-75">
+            <button data-ecp-action="add-to-cart" data-ecp-handle="add_to_cart" aria-label="{message:CategoryWithProducts/AddToCartButtonLabel_template}">{message:CategoryWithProducts/AddToCartButton}</button>
+            <span data-ecp-handle="add_more_to_cart">
+              <button data-ecp-action="add-to-cart" aria-label="{message:CategoryWithProducts/AddMoreToCartButtonLabel_template}">{message:CategoryWithProducts/AddMoreToCartButton}</button>
+              <p class="ecp-form-tip ecp-text-center">{message:CategoryWithProducts/CartCount_template}</p>
+            </span>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="ecp-section" data-ecp-handle="not_available">
+      <div class="ecp-callout-box">
+        <span data-ecp-handle="status_back_ordered">{message:CategoryWithProducts/Status/BackOrdered}</span>
+        <span data-ecp-handle="status_call">{message:CategoryWithProducts/Status/Call}</span>
+        <span data-ecp-handle="status_discontinued">{message:CategoryWithProducts/Status/Discontinued}</span>
+        <span data-ecp-handle="status_pre_ordered">{message:CategoryWithProducts/Status/PreOrdered}</span>
+        <span data-ecp-handle="status_restricted_allocated">{message:CategoryWithProducts/Status/RestrictedAllocated}</span>
+        <span data-ecp-handle="status_restricted_wine_club">{message:CategoryWithProducts/Status/RestrictedWineClub}</span>
+        <span data-ecp-handle="status_sold_out">{message:CategoryWithProducts/Status/SoldOut}</span>
+        <span data-ecp-handle="status_">{message:CategoryWithProducts/Status/Unknown}</span>
+      </div>
+    </div>
+  </div> 

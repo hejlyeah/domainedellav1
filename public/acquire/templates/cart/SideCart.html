@@ -1,0 +1,122 @@
+<div class="ecp-component ecp_SideCart ecp-sidecart" role="dialog">
+  <div class="ecp-sidecart-header">
+    <h2>{message:SideCart/Title}</h2>
+    <a href="#" class="ecp-dismiss-link-2" data-ecp-action="close" aria-label="{message:SideCart/CloseLabel}">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+    </a>
+  </div>
+
+  <div class="ecp-sidecart-empty" data-ecp-handle="empty_cart">
+    <div class="ecp-sidecart-empty-message">
+      <p>{message:SideCart/EmptyCart}</p>
+      <button data-ecp-handle="empty_close_button" data-ecp-action="close">{message:SideCart/EmptyCartButton}</button>
+    </div>
+  </div>
+
+  <div class="ecp-sidecart-content" data-ecp-handle="cart">
+    <form class="ecp-form">
+      <div class="ecp-suggestions" data-ecp-handle="suggestions" aria-describedby="ecpi_suggestions_title">
+        <h3 id="ecpi_suggestions_title">{message:SideCart/Suggestions/Title}</h3>
+        <div class="ecp-slider" data-ecp-handle="suggestions_slider">
+          <span class="ecp-slider-arrow ecp-slider-arrow-prev" data-ecp-handle="slide_prev" data-ecp-action="slide-prev">&#8249;</span>
+          <span class="ecp-slider-arrow ecp-slider-arrow-next" data-ecp-handle="slide_next" data-ecp-action="slide-next">&#8250;</span>
+          <ul class="ecp-slider-slides" data-ecp-x-limit="4">
+            <!-- | SideCart__SuggestedProduct template | -->
+          </ul>
+        </div>
+      </div>
+      <div class="ecp-section" data-ecp-handle="products" role="list">
+        <!-- 
+            | SideCart__Product_A template is used for products with no thumbnail image |
+
+            or
+
+            | SideCart__Product_B template is used for products with a thumbnail image |
+        -->
+      </div>
+      <div class="ecp-section" data-ecp-handle="allocation_section">
+        <h3 class="ecp-section-subtitle">{message:SideCart/Allocated/Title}</h3>
+        <div class="ecp-x-list" data-ecp-handle="allocated_products" role="list">
+          <!-- | SideCart__AllocatedProduct | -->
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="ecp-sidecart-footer ecp-cart-summary" data-ecp-handle="summary" role="region" aria-labelledby="^ecpi_summary_title" aria-live="polite">
+    <div class="ecp-grid" role="table">
+      <div class="ecp-grid-row ecp-clearfix" role="row">
+        <span class="ecp-grid-col-6" role="rowheader">{message:SideCart/Summary/Subtotal} ({message:items_quantity_total})</span>
+        <span class="ecp-grid-col-6 ecp-text-right" role="cell">
+          <span data-ecp-handle="items_discounted">
+            <span class="ecp-price-regular" aria-label="{message:SideCart/Summary/SubtotalLabel}">{currency:items_subtotal}</span><span class="ecp-price-discounted" aria-label="{message:SideCart/Summary/SubtotalDiscountedLabel}">{currency:items_total}</span>
+          </span>
+          <span data-ecp-handle="items_not_discounted">
+            <span class="ecp-price" aria-label="{message:SideCart/Summary/SubtotalLabel}">{currency:items_subtotal}</span>
+          </span>
+        </span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_deposit_row" role="row">
+        <span class="ecp-grid-col-8" role="rowheader">{message:deposit_label}</span>
+        <span class="ecp-grid-col-4 ecp-text-right" role="cell">{currency:total_deposit}</span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_shipping_row" role="row">
+        <span class="ecp-grid-col-8" role="rowheader">{message:SideCart/Summary/Shipping_template} <a href="#" data-ecp-action="show-zip-change-form">{message:shipping_zip}</a></span>
+        <span class="ecp-grid-col-4 ecp-text-right" data-ecp-handle="total_shipping" role="cell">
+          <span data-ecp-handle="shipping_discounted">
+            <span class="ecp-price-regular" aria-label="{message:SideCart/Summary/ShippingTotalLabel}">{currency:total_shipping}</span><span class="ecp-price-discounted" aria-label="{message:SideCart/Summary/ShippingDiscountedLabel}">{currency:total_shipping_extended}</span>
+          </span>
+          <span data-ecp-handle="shipping_not_discounted">
+            <span class="ecp-price" aria-label="{message:SideCart/Summary/ShippingTotalLabel}">{currency:total_shipping}</span>
+          </span>
+        </span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_tax_row" role="row">
+        <span class="ecp-grid-col-8" role="rowheader">
+          <span data-ecp-handle="tax_on_shipping">{message:SideCart/Summary/TaxTotalShip_template}</span>
+          <span data-ecp-handle="tax_on_pickup">{message:SideCart/Summary/TaxTotalPickup_template}</span>
+        </span>
+        <span class="ecp-grid-col-4 ecp-text-right" data-ecp-handle="total_tax" role="cell">{currency:total_tax}</span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix ecp-grid-row-insert" data-ecp-handle="zip_change_form_row" role="row">
+        <span class="ecp-grid-col-12">
+          <form class="ecp-form ecp-form-inline">
+            <label for="ecpi_ship_estimate_zip_1">{message:SideCart/Summary/ChangeZip}</label><input type="text" id="ecpi_ship_estimate_zip_1" name="ship_estimate_zip" size="5" maxlength="5" autocomplete="off"> <button data-ecp-action="apply-zip-change">{message:SideCart/Summary/ChangeZipOK}</button> <button class="ecp-secondary" data-ecp-action="cancel-zip-change">{message:SideCart/Summary/ChangeZipCancel}</button>
+          </form>
+        </span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_fees_row" role="row">
+        <span class="ecp-grid-col-8" role="rowheader">{message:SideCart/Summary/FeesTotal}</span>
+        <span class="ecp-grid-col-4 ecp-text-right" role="cell">{currency:total_fees}</span>
+      </div>
+      <div class="ecp-grid-row ecp-grid-row-topline ecp-clearfix" data-ecp-handle="total_row" role="row">
+        <span class="ecp-grid-col-6" role="rowheader"><strong>{message:SideCart/Summary/GrandTotal}</strong></span>
+        <span class="ecp-grid-col-6 ecp-text-right" data-ecp-handle="total" role="cell"><strong>{currency:total}</strong></span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix ecp-grid-row-insert" data-ecp-handle="zip_form_link_row" role="row">
+        <span class="ecp-grid-col-12"><a href="#" data-ecp-action="show-zip-form">{message:SideCart/Summary/ZipFormLink}</a></span>
+      </div>
+      <div class="ecp-grid-row ecp-clearfix ecp-grid-row-insert" data-ecp-handle="zip_form_row" role="row">
+        <span class="ecp-grid-col-12">
+          <form class="ecp-form ecp-form-inline">
+            <label for="ecpi_ship_estimate_zip_2">{message:SideCart/Summary/EnterZip}</label><input type="text" id="ecpi_ship_estimate_zip_2" name="ship_estimate_zip" size="5" maxlength="5" autocomplete="off"> <button data-ecp-action="apply-zip">{message:SideCart/Summary/ChangeZipOK}</button>
+          </form>
+        </span>
+      </div>
+      <div class="ecp-grid-row ecp-grid-row-topline ecp-clearfix" data-ecp-handle="discount_names_row" role="row">
+        <span class="ecp-grid-col-12" role="rowheader">
+          <ul class="ecp-icon-list" data-ecp-handle="discount_names" role="list"> 
+            <!-- | SideCart__DiscountName template | -->
+          </ul>
+        </span>
+      </div>
+    </div>
+    <div class="ecp-callout-warning" data-ecp-handle="allocation_minimum_quantity">
+      <a href="{message:__allocation_link}">{message:SideCart/Summary/AllocationMinQuantity_template}</a>
+    </div>
+    <div class="ecp-button-pair">
+      <button data-ecp-action="load-cart" class="ecp-secondary">{message:SideCart/Summary/ViewCartButton}</button>
+      <button data-ecp-action="checkout" data-ecp-handle="checkout_button">{message:SideCart/Summary/CheckoutButton}</button>
+    </div>
+  </div>
+</div> 

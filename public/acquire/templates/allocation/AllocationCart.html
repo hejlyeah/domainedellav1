@@ -1,0 +1,24 @@
+<div class="ecp_AllocationCart allocation-container">
+  <h3>{message:AllocationCart/Title}</h3>
+  <div class="ecp-description">{message:AllocationCart/Description}</div>
+  <div data-ecp-handle="allocated_products" role="list">
+    <!-- | AllocationCart__Product template | -->
+  </div>
+  <div class="ecp-callout-warning" data-ecp-handle="allocation_minimum_quantity">
+    {message:AllocationCart/MinimumQuantityNotice}
+  </div>
+  <div class="ecp-subtotals">
+    <div class="ecp-subtotal-row">
+      <div class="ecp-subtotal-label">{message:AllocationCart/OrderSubtotalLabel}</div>
+      <div class="ecp-subtotal-value" data-ecp-handle="subtotal">{currency:subtotal}</div>
+    </div>
+    <div class="ecp-subtotal-row">
+      <div class="ecp-subtotal-label">{message:AllocationCart/RequestSubtotalLabel}</div>
+      <div class="ecp-subtotal-value" data-ecp-handle="request_subtotal">{currency:request_subtotal}</div>
+    </div>
+  </div>
+  <div class="ecp-actions">
+    <a href="{message:__back_url}" class="ecp-button-secondary">{message:AllocationCart/BackButtonText}</a>
+    <a href="{message:__next_url}" class="ecp-button-primary" data-ecp-handle="checkout_button">{message:AllocationCart/CheckoutButtonText}</a>
+  </div>
+</div> 

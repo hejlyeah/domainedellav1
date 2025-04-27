@@ -1,0 +1,60 @@
+<div class="ecp-variant ecp-clearfix" data-ecp-id="{message:aep_id}" role="listitem">
+  <div class="ecp-variant-name">{message:variant_name}</div>
+  <div class="ecp-variant-price" aria-label="{message:AllocationCart/Variant/PriceLabel}" data-ecp-handle="price">{currency:price}</div>
+  <div class="ecp-section" data-ecp-handle="messages">
+    <!-- buy-only messages --->
+    <span data-ecp-handle="purchase_up_to_x">{message:AllocationCart/Variant/MayPurchaseUpToX_template}</span>
+    <span data-ecp-handle="purchase_exactly_x">{message:AllocationCart/Variant/MayPurchaseExactlyX_template}</span>
+    <span data-ecp-handle="purchase_n_of_x">{message:AllocationCart/Variant/MayPurchaseNOfX_template}</span>
+    <span data-ecp-handle="purchased_max">{message:AllocationCart/Variant/MaxPurchased_template}</span>
+    <span data-ecp-handle="sold_out">{message:AllocationCart/Variant/SoldOut}</span>
+    <!-- buy and limited request messages -->
+    <span data-ecp-handle="purchase_up_to_x_request_up_to_y">{message:AllocationCart/Variant/MayPurchaseUpToXRequestUpToY_template}</span>
+    <span data-ecp-handle="purchase_n_of_x_request_up_to_y">{message:AllocationCart/Variant/MayPurchaseNOfXRequestUpToY_template}</span>
+    <span data-ecp-handle="purchased_max_request_up_to_y">{message:AllocationCart/Variant/MaxPurchasedRequestUpToY_template}</span>
+    <span data-ecp-handle="purchased_max_requested_n_request_z_more">{message:AllocationCart/Variant/MaxPurchasedRequestedNRequestZMore_template}</span>
+    <span data-ecp-handle="purchased_max_requested_max">{message:AllocationCart/Variant/MaxPurchasedMaxRequested_template}</span>
+    <span data-ecp-handle="sold_out_request_up_to_y">{message:AllocationCart/Variant/SoldOutRequestUpToY_template}</span>
+    <span data-ecp-handle="sold_out_requested_n_request_z_more">{message:AllocationCart/Variant/SoldOutRequestedNRequestZMore_template}</span>
+    <span data-ecp-handle="sold_out_requested_max">{message:AllocationCart/Variant/SoldOutMaxRequested_template}</span>
+    <!-- buy and unlimited request messages -->
+    <span data-ecp-handle="purchase_up_to_x_request_unlimited">{message:AllocationCart/Variant/MayPurchaseUpToXRequestUnlimited_template}</span>
+    <span data-ecp-handle="purchase_exactly_x_request_unlimited">{message:AllocationCart/Variant/MayPurchaseExactlyXRequestUnlimited_template}</span>
+    <span data-ecp-handle="purchase_n_of_x_request_unlimited">{message:AllocationCart/Variant/MayPurchaseNOfXRequestUnlimited_template}</span>
+    <span data-ecp-handle="purchased_max_request_unlimited">{message:AllocationCart/Variant/MaxPurchasedRequestUnlimited_template}</span>
+    <span data-ecp-handle="sold_out_request_unlimited">{message:AllocationCart/Variant/SoldOutRequestUnlimited_template}</span>
+    <!-- request-only messages -->
+    <span data-ecp-handle="request_up_to_y">{message:AllocationCart/Variant/MayRequestUpToY_template}</span>
+    <span data-ecp-handle="request_exactly_y">{message:AllocationCart/Variant/MayRequestExactlyY_template}</span>
+    <span data-ecp-handle="request_n_of_y">{message:AllocationCart/Variant/MayRequestNofY_template}</span>
+    <span data-ecp-handle="requested_max">{message:AllocationCart/Variant/MaxRequested_template}</span>
+    <span data-ecp-handle="requested_once">{message:AllocationCart/Variant/RequestedOnce_template}</span>
+    <span data-ecp-handle="request_unlimited">{message:AllocationCart/Variant/RequestUnlimited}</span>
+  </div>
+  <div class="ecp-grid">
+    <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="quantity_row">
+      <span class="ecp-grid-col-3"><label for="ecpi_{message:aep_id}_quantity" class="ecp-form-input-label">{message:AllocationCart/Variant/QuantityLabel}</label></span>
+      <span class="ecp-grid-col-3">
+        <select id="ecpi_{message:aep_id}_quantity" name="quantity" data-ecp-action="change-quantity"></select>
+      </span>
+      <span class="ecp-grid-col-3 ecp-text-right"><span class="ecp-form-input-info">{message:AllocationCart/Variant/TotalLabel}</span></span>
+      <span class="ecp-grid-col-3 ecp-text-right"><span class="ecp-form-input-info" data-ecp-handle="total"></span></span>
+    </div>
+    <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="limited_request_row">
+      <span class="ecp-grid-col-3"><label for="ecpi_{message:aep_id}_request" class="ecp-form-input-label">{message:AllocationCart/Variant/LimitedRequestQuantityLabel}</label></span>
+      <span class="ecp-grid-col-3">
+        <select id="ecpi_{message:aep_id}_request" name="request_quantity" data-ecp-action="change-quantity"></select>
+      </span>
+      <span class="ecp-grid-col-3 ecp-text-right"><span class="ecp-form-input-info">{message:AllocationCart/Variant/LimitedRequestTotalLabel}</span></span>
+      <span class="ecp-grid-col-3 ecp-text-right"><span class="ecp-form-input-info" data-ecp-handle="request_value"></span></span>
+    </div>
+    <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="unlimited_request_row">
+      <span class="ecp-grid-col-3"><label for="ecpi_{message:aep_id}_unlimited" class="ecp-form-input-label">{message:AllocationCart/Variant/UnlimitedRequestQuantityLabel}</label></span>
+      <span class="ecp-grid-col-3">
+        <input id="ecpi_{message:aep_id}_unlimited" type="text" name="request_quantity" data-ecp-action="change-quantity">
+      </span>
+      <span class="ecp-grid-col-3 ecp-text-right"><span class="ecp-form-input-info">{message:AllocationCart/Variant/UnlimitedRequestTotalLabel}</span></span>
+      <span class="ecp-grid-col-3 ecp-text-right"><span class="ecp-form-input-info" data-ecp-handle="request_value"></span></span>
+    </div>
+  </div>
+</div> 

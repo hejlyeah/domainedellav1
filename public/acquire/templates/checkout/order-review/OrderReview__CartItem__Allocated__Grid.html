@@ -1,0 +1,48 @@
+<!-- eCellar Order Review Allocated Cart Item Grid Template -->
+<div class="ecp-list-item {message:css_class}" role="listitem">
+  <div class="ecp-grid">
+    <div class="ecp-grid-row ecp-clearfix">
+      <span class="ecp-grid-col-12">
+        <h4>{message:product_name}</h4>
+        <ul class="ecp-item-list" data-ecp-handle="attributes">
+          <li data-ecp-handle="attribute_1">{message:OrderReview/Attribute1_template}</li>
+          <li data-ecp-handle="attribute_2">{message:OrderReview/Attribute2_template}</li>
+          <li data-ecp-handle="attribute_3">{message:OrderReview/Attribute3_template}</li>
+        </ul>
+      </span>
+    </div>
+    <div class="ecp-grid-row ecp-clearfix">
+      <span class="ecp-grid-col-1">&nbsp;</span>
+      <span data-ecp-handle="discounted">
+        <span class="ecp-grid-col-3">
+          <span class="ecp-price-regular" aria-label="{message:OrderReview/Allocated/RegularPriceLabel}">{currency:regular_price}</span>
+        </span>
+        <span class="ecp-grid-col-8">
+          <span class="ecp-price-discounted" aria-label="{message:OrderReview/Allocated/DiscountPriceLabel}">{currency:discount_price}</span>
+        </span>
+      </span>
+      <span data-ecp-handle="not_discounted">
+        <span class="ecp-grid-col-11">
+          <span class="ecp-price" aria-label="{message:OrderReview/Allocated/PriceLabel}">{currency:regular_price}</span>
+        </span>
+      </span>
+    </div>
+    <div class="ecp-grid-row ecp-clearfix">
+      <span class="ecp-grid-col-1">&nbsp;</span>
+      <span class="ecp-grid-col-3">{message:OrderReview/Allocated/QuantityLabel}</span>
+      <span class="ecp-grid-col-2">{message:cart_quantity}</span>
+      <span class="ecp-grid-col-6 ecp-text-right" aria-label="{message:OrderReview/Allocated/ItemSubtotalLabel}">{currency:total}</span>
+    </div>
+    <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="crv_deposit">
+      <span class="ecp-grid-col-1">&nbsp;</span>
+      <span class="ecp-grid-col-5">{message:crv_label}</span>
+      <span class="ecp-grid-col-6 ecp-text-right" aria-label="{message:OrderReview/ItemDepositLabel}">{currency:crv_amount}</span>
+    </div>
+    <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="cart_request_quantity">
+      <span class="ecp-grid-col-1">&nbsp;</span>
+      <span class="ecp-grid-col-3">{message:OrderReview/Allocated/RequestQuantityLabel}</span>
+      <span class="ecp-grid-col-2">{message:cart_request_quantity}</span>
+      <span class="ecp-grid-col-6 ecp-text-right">&nbsp;</span>
+    </div>
+  </div>
+</div> 

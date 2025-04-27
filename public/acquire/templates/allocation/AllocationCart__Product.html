@@ -1,0 +1,83 @@
+<div class="ecp-list-item allocation-product-card {message:css_class}" data-ecp-id="{message:aep_id}" role="listitem">
+  <h4>{message:product_name}</h4>
+  <div class="ecp-html-subtitle" data-ecp-handle="feature_text">{message:feature_text}</div>
+  <ul class="ecp-item-list" data-ecp-handle="attributes">
+    <li data-ecp-handle="attribute_1">{message:AllocationCart/Attribute1_template}</li>
+    <li data-ecp-handle="attribute_2">{message:AllocationCart/Attribute2_template}</li>
+    <li data-ecp-handle="attribute_3">{message:AllocationCart/Attribute3_template}</li>
+  </ul>
+  <div class="ecp-columns ecp-clearfix">
+    <div class="ecp-columns-left">
+      <img src="{message:image_1}" alt="{message:AllocationCart/ImageAlt_template}">
+    </div>
+    <div class="ecp-columns-right">
+      <div class="ecp-price" aria-label="{message:AllocationCart/PriceLabel}" data-ecp-handle="price">{currency:price}</div>
+      <div class="ecp-html-content">{message:display_title}</div>
+    </div>
+  </div>
+  
+  <div class="ecp-section" data-ecp-handle="no_variants">
+    <div class="ecp-section-message">
+      <!-- Status messages remain here -->
+      <span data-ecp-handle="purchase_up_to_x">{message:AllocationCart/MayPurchaseUpToX_template}</span>
+      <span data-ecp-handle="purchase_exactly_x">{message:AllocationCart/MayPurchaseExactlyX_template}</span>
+      <span data-ecp-handle="purchase_n_of_x">{message:AllocationCart/MayPurchaseNOfX_template}</span>
+      <span data-ecp-handle="purchased_max">{message:AllocationCart/MaxPurchased_template}</span>
+      <span data-ecp-handle="sold_out">{message:AllocationCart/SoldOut}</span>
+      <span data-ecp-handle="purchase_up_to_x_request_up_to_y">{message:AllocationCart/MayPurchaseUpToXRequestUpToY_template}</span>
+      <span data-ecp-handle="purchase_n_of_x_request_up_to_y">{message:AllocationCart/MayPurchaseNOfXRequestUpToY_template}</span>
+      <span data-ecp-handle="purchased_max_request_up_to_y">{message:AllocationCart/MaxPurchasedRequestUpToY_template}</span>
+      <span data-ecp-handle="purchased_max_requested_n_request_z_more">{message:AllocationCart/MaxPurchasedRequestedNRequestZMore_template}</span>
+      <span data-ecp-handle="purchased_max_requested_max">{message:AllocationCart/MaxPurchasedMaxRequested_template}</span>
+      <span data-ecp-handle="sold_out_request_up_to_y">{message:AllocationCart/SoldOutRequestUpToY_template}</span>
+      <span data-ecp-handle="sold_out_requested_n_request_z_more">{message:AllocationCart/SoldOutRequestedNRequestZMore_template}</span>
+      <span data-ecp-handle="sold_out_requested_max">{message:AllocationCart/SoldOutMaxRequested_template}</span>
+      <span data-ecp-handle="purchase_up_to_x_request_unlimited">{message:AllocationCart/MayPurchaseUpToXRequestUnlimited_template}</span>
+      <span data-ecp-handle="purchase_exactly_x_request_unlimited">{message:AllocationCart/MayPurchaseExactlyXRequestUnlimited_template}</span>
+      <span data-ecp-handle="purchase_n_of_x_request_unlimited">{message:AllocationCart/MayPurchaseNOfXRequestUnlimited_template}</span>
+      <span data-ecp-handle="purchased_max_request_unlimited">{message:AllocationCart/MaxPurchasedRequestUnlimited_template}</span>
+      <span data-ecp-handle="sold_out_request_unlimited">{message:AllocationCart/SoldOutRequestUnlimited_template}</span>
+      <span data-ecp-handle="request_up_to_y">{message:AllocationCart/MayRequestUpToY_template}</span>
+      <span data-ecp-handle="request_exactly_y">{message:AllocationCart/MayRequestExactlyY_template}</span>
+      <span data-ecp-handle="request_n_of_y">{message:AllocationCart/MayRequestNofY_template}</span>
+      <span data-ecp-handle="requested_max">{message:AllocationCart/MaxRequested_template}</span>
+      <span data-ecp-handle="requested_once">{message:AllocationCart/RequestedOnce_template}</span>
+      <span data-ecp-handle="request_unlimited">{message:AllocationCart/RequestUnlimited}</span>
+    </div>
+
+    <!-- Simpler block controls structure -->
+    <div class="allocation-controls-block">
+      <div class="control-group" data-ecp-handle="quantity_row">
+        <label for="ecpi_{message:aep_id}_quantity" class="control-label">{message:AllocationCart/QuantityLabel}</label>
+        <select id="ecpi_{message:aep_id}_quantity" name="quantity" data-ecp-action="change-quantity" class="control-input"></select>
+        <div class="control-value-line">
+          <span class="value-label">{message:AllocationCart/TotalLabel}</span>
+          <span class="value-amount" data-ecp-handle="total"></span>
+        </div>
+      </div>
+      
+      <div class="control-group" data-ecp-handle="limited_request_row">
+        <label for="ecpi_{message:aep_id}_request" class="control-label">{message:AllocationCart/LimitedRequestQuantityLabel}</label>
+        <select id="ecpi_{message:aep_id}_request" name="request_quantity" data-ecp-action="change-quantity" class="control-input"></select>
+         <div class="control-value-line" data-ecp-handle="request_value_display"> <!-- Wrapper for value -->
+           <span class="value-label">{message:AllocationCart/RequestTotalLabel_template}</span>
+           <span class="value-amount" data-ecp-handle="request_value"></span>
+        </div>
+      </div>
+
+      <div class="control-group" data-ecp-handle="unlimited_request_row">
+         <label for="ecpi_{message:aep_id}_unlimited" class="control-label">{message:AllocationCart/UnlimitedRequestQuantityLabel}</label>
+         <input id="ecpi_{message:aep_id}_unlimited" type="text" name="request_quantity" data-ecp-action="change-quantity" class="control-input">
+         <div class="control-value-line" data-ecp-handle="request_value_display"> <!-- Wrapper for value -->
+            <span class="value-label">{message:AllocationCart/RequestTotalLabel_template}</span>
+            <span class="value-amount" data-ecp-handle="request_value"></span>
+         </div>
+      </div>
+    </div>
+    <!-- End simpler structure -->
+
+  </div>
+  <div class="ecp-section" data-ecp-handle="variants" role="list">
+    <!-- | AllocationCart__Product__Variant template | -->
+  </div>
+</div> 

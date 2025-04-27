@@ -1,0 +1,583 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --header-height: 64px; /* Default header height */
+  --spacer-adjustment: 0.8; /* Adjustment factor for spacers */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Vimeo container and iframe styles for homepage */
+.vimeo-container {
+  min-height: 100vh;
+  background-color: black;
+}
+
+/* Homepage iframe styles */
+iframe {
+  min-height: 100vh !important;
+  pointer-events: none !important;
+  border: none !important;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Force homepage iframe to maintain full height and show when loaded */
+iframe[src*="vimeo"] {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  opacity: 1;
+}
+
+/* Story page specific Vimeo styles - these won't affect the homepage */
+.story-vimeo-container {
+  position: relative;
+  /* 4608:1540 aspect ratio (3:1) */
+  padding-top: 33.42%; /* (1540 / 4608) * 100% */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: black;
+  overflow: hidden;
+}
+
+.story-vimeo-iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100vw !important;
+  height: 100% !important;
+  min-width: 100vw !important;
+  min-height: 100% !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  border: none !important;
+  opacity: 1 !important;
+}
+
+/* Dynamic spacer for the story page video - top spacer (smaller) */
+.story-video-spacer-top {
+  /* Calculate base spacer height and reduce it by the adjustment factor */
+  height: calc(((100vh - var(--header-height) - 33.42vw) / 2) * var(--spacer-adjustment));
+  min-height: 0;
+}
+
+/* Dynamic spacer for the story page video - bottom spacer (larger) */
+.story-video-spacer-bottom {
+  /* Calculate base spacer height and increase it by the inverse of the adjustment factor */
+  height: calc(((100vh - var(--header-height) - 33.42vw) / 2) * (2 - var(--spacer-adjustment)));
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .story-vimeo-container {
+    padding-top: 56.25%; /* 16:9 aspect ratio for mobile */
+  }
+
+  .story-video-spacer-top {
+    /* Adjust calculation for mobile aspect ratio */
+    height: calc(((100vh - var(--header-height) - 56.25vw) / 2) * var(--spacer-adjustment));
+  }
+
+  .story-video-spacer-bottom {
+    /* Adjust calculation for mobile aspect ratio */
+    height: calc(((100vh - var(--header-height) - 56.25vw) / 2) * (2 - var(--spacer-adjustment)));
+  }
+}
+
+/* Responsive text scaling */
+.regions-text {
+  font-size: clamp(0.65rem, 1.5vw, 0.875rem);
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+@media (max-width: 639px) { /* Allow wrapping on smallest screens */
+  .regions-text {
+    white-space: normal; /* Override whitespace-nowrap */
+    text-align: center; /* Center align when wrapped */
+  }
+}
+
+@media (min-width: 640px) {
+  .regions-text {
+    font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .regions-text {
+    font-size: clamp(0.85rem, 1vw, 0.875rem);
+  }
+}
+
+/* Hide scrollbar for timeline */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Aspect ratio utility for images */
+.aspect-w-4 {
+  position: relative;
+  padding-bottom: calc(3 / 4 * 100%);
+}
+
+.aspect-w-4 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Modify the smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add this to override scroll behavior for navigation */
+html.navigation-scroll {
+  scroll-behavior: auto;
+}
+
+/* Add styles for the sidebar navigation */
+@media (min-width: 1024px) {
+  .sticky {
+    position: sticky;
+    top: 120px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+  }
+}
+
+/* Add additional styles for fixed sidebar navigation */
+@media (min-width: 1024px) {
+  .lg\:fixed {
+    position: fixed;
+    top: 120px; /* Adjust based on header height */
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .lg\:fixed::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+}
+
+/* Add these styles to your globals.css */
+/* Update the infinite scroll container styles to ensure animation works */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* NEW: Reverse Scroll Animation */
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%); /* Start scrolled left */
+  }
+  100% {
+    transform: translateX(0); /* Scroll right */
+  }
+}
+
+.infinite-scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.infinite-scroll-content,
+.infinite-scroll-content-reverse { /* Apply base styles to both */
+  display: inline-block;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.infinite-scroll-content {
+  animation: scroll 400s linear infinite; /* Further increased duration */
+}
+
+/* NEW: Apply reverse animation */
+.infinite-scroll-content-reverse {
+  animation: scroll-reverse 400s linear infinite; /* Further increased duration */
+}
+
+.infinite-scroll-content:hover,
+.infinite-scroll-content-reverse:hover { /* Pause both on hover */
+  animation-play-state: paused;
+}
+
+.review-card {
+  display: inline-block;
+  white-space: normal;
+  width: 300px; /* Base width, adjusted by media queries */
+  vertical-align: top; /* Ensures cards align at the top */
+  margin: 0;
+  padding: 0;
+  height: auto; /* Let inner div control height */
+}
+
+/* Target the inner div for fixed height */
+.review-card > div {
+  height: 250px; /* Fixed height - ADJUST AS NEEDED */
+  /* overflow-y: auto; - Removed, now handled by inner div */
+  /* h-full and flex flex-col are applied inline */
+}
+
+/* NEW: Styles for the inner scrollable text area */
+.review-text-scroll {
+  /* Fade effect at the bottom - REMOVED */
+  /* -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%); */
+  /* mask-image: linear-gradient(to bottom, black 85%, transparent 100%); */
+
+  /* Subtle scrollbar styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent; /* Firefox - thumb color track color */
+}
+
+/* NEW: Preserve newlines in review text */
+.review-text-scroll p {
+  white-space: pre-line;
+}
+
+.review-text-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.review-text-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.review-text-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.8); /* Increased opacity */
+  border-radius: 3px;
+}
+
+@media (min-width: 640px) {
+  .review-card {
+    width: 350px;
+  }
+  .review-card > div {
+    height: 280px; /* Fixed height - ADJUST AS NEEDED */
+  }
+}
+
+@media (min-width: 768px) {
+  .review-card {
+    width: 400px;
+  }
+   .review-card > div {
+    height: 300px; /* Fixed height - ADJUST AS NEEDED */
+  }
+}
+
+/* Wine scores carousel specific styles */
+.wine-scores {
+  animation: scroll 40s linear infinite;
+}
+
+.wine-scores:hover {
+  animation-play-state: paused;
+}
+
+/* Mini wines carousel specific styles - Faster Speed */
+.mini-wines-fast {
+  display: inline-block;
+  padding: 0;
+  white-space: nowrap;
+  animation: scroll 80s linear infinite; /* Decreased from 120s to 80s for faster speed */
+}
+
+.mini-wines-fast:hover {
+  animation-play-state: paused;
+}
+
+/* Add these styles at the end of the file */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.score-pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Enhance the star styling */
+.star-rating .star {
+  filter: drop-shadow(0 0 2px rgba(234, 24, 44, 0.5));
+}
+
+/* Remove these gradient overlay styles to eliminate the black fading at the ends */
+.infinite-scroll-container::after,
+.infinite-scroll-container::before {
+  display: none; /* This will hide the gradient overlays */
+}
+
+/* Force content to be visible after 3 seconds regardless of player status */
+.content-fallback {
+  animation: fadeInFallback 1s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeInFallback {
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+
+}
+
+/* eCellar Sidekick (Added to Cart) Styles */
+[data-ecp-sidekick] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000; /* Ensure it's above most other content */
+  width: 350px; /* Adjust width as needed */
+  max-width: 90vw;
+  pointer-events: none; /* Allow clicks to pass through the container */
+  overflow: hidden; /* Hide the component when off-screen */
+}
+
+.ecp-component.ecp_AddedToCart.ecp-sidekick {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Dark text color */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%); /* Start off-screen */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+  pointer-events: auto; /* Enable interaction with the sidekick itself */
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e0e0e0; /* Subtle border */
+}
+
+/* State when the sidekick is shown */
+.ecp-component.ecp_AddedToCart.ecp-sidekick.ecp-transition-slide-from-right-show {
+  transform: translateX(0); /* Slide in */
+}
+
+/* Header Styles */
+.ecp-sidekick-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f8f8; /* Slightly off-white header */
+}
+
+.ecp-sidekick-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.ecp-sidekick-header .ecp-dismiss-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #888888;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+}
+.ecp-sidekick-header .ecp-dismiss-link:hover {
+  color: #333333;
+}
+
+
+/* Content Styles */
+.ecp-sidekick-content {
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  flex-grow: 1;
+}
+
+.ecp-sidekick-content .ecp-section {
+  margin-bottom: 20px;
+}
+
+.ecp-sidekick-content .ecp-columns {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.ecp-sidekick-content .ecp-columns-left {
+  flex-shrink: 0;
+  width: 60px; /* Adjust image size */
+}
+
+.ecp-sidekick-content .ecp-columns-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #e0e0e0;
+}
+
+.ecp-sidekick-content .ecp-columns-right {
+  flex-grow: 1;
+}
+
+.ecp-sidekick-content dl {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.ecp-sidekick-content dt {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1a1a1a;
+}
+
+.ecp-sidekick-content dd {
+  margin: 0 0 8px 0;
+  color: #555555;
+}
+
+.ecp-sidekick-content .ecp-price {
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+/* Buttons */
+.ecp-sidekick-content .ecp-grid {
+  /* Using flexbox for button layout */
+  display: flex;
+  gap: 10px;
+}
+
+/* Remove specific grid column classes if using flex */
+.ecp-sidekick-content .ecp-grid-col-6 {
+   flex: 1; /* Make buttons share space equally */
+}
+
+.ecp-sidekick-content button {
+  width: 100%; /* Make buttons fill their container */
+  padding: 12px 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+
+.ecp-sidekick-content button[data-ecp-action="continue-shopping"] {
+  background-color: #f0f0f0; /* Light gray for continue shopping */
+  color: #333333;
+  border: 1px solid #cccccc;
+}
+
+.ecp-sidekick-content button[data-ecp-action="continue-shopping"]:hover {
+  background-color: #e0e0e0;
+}
+
+.ecp-sidekick-content button[data-ecp-action="load-cart"] {
+  background-color: #e31837; /* Theme red for view cart */
+  color: #ffffff;
+}
+
+.ecp-sidekick-content button[data-ecp-action="load-cart"]:hover {
+  background-color: #c4142d; /* Darker red on hover */
+}
+
+
+/* Suggestions Section */
+.ecp-sidekick-content .ecp-list-wrapper {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.ecp-sidekick-content .ecp-list-wrapper h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.ecp-sidekick-content .ecp-horizontal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  overflow-x: auto; /* Allow horizontal scroll if needed */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.ecp-sidekick-content .ecp-horizontal-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome, Safari, Opera */
+}
+
+.ecp-sidekick-content .ecp-horizontal-list li {
+  flex: 0 0 100px; /* Adjust suggested item width */
+  text-align: center;
+}
+
+.ecp-sidekick-content .ecp-horizontal-list img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.ecp-sidekick-content .ecp-horizontal-list a {
+  text-decoration: none;
+  color: #337ab7; /* Link color */
+  font-size: 0.8rem;
+}
+
+.ecp-sidekick-content .ecp-horizontal-list a:hover {
+  text-decoration: underline;
+}
+
+.ecp-sidekick-content .ecp-horizontal-list div {
+  /* For product title */
+  color: #333333;
+  line-height: 1.3;
+}
+

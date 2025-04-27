@@ -1,0 +1,33 @@
+<div class="ecp-component ecp_Products">
+  <div class="ecp-category-header">
+    <h1 class="ecp-category-title" data-ecp-handle="title">{category_name}</h1>
+    <div class="ecp-category-description" data-ecp-handle="description">{category_description}</div>
+  </div>
+  
+  <div class="ecp-products-filters" data-ecp-handle="filters">
+    <div class="ecp-products-sort">
+      <label for="sort">{message:sort_by}</label>
+      <select name="sort" data-ecp-action="sort">
+        <option value="name">{message:name}</option>
+        <option value="price">{message:price}</option>
+        <option value="vintage">{message:vintage}</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="ecp-products" data-ecp-handle="products">
+    <!-- | Products__Product template | -->
+  </div>
+  
+  <div class="ecp-products-empty" data-ecp-handle="empty">
+    <p>{message:no_products}</p>
+  </div>
+  
+  <div class="ecp-products-pagination" data-ecp-handle="pagination">
+    <button class="ecp-products-prev" data-ecp-action="prev" data-ecp-handle="prev">{message:previous}</button>
+    <div class="ecp-products-pages" data-ecp-handle="pages">
+      <!-- | Products__Page template | -->
+    </div>
+    <button class="ecp-products-next" data-ecp-action="next" data-ecp-handle="next">{message:next}</button>
+  </div>
+</div> 

@@ -1,0 +1,127 @@
+<div class="ecp-component ecp_Cart">
+  <h2>{message:Cart/Title}</h2>
+
+  <div class="ecp-cart-wrapper">
+    <div class="ecp-cart-contents" data-ecp-handle="cart">
+      <div class="ecp-cart-contents-header" aria-hidden="true">
+        <div>{message:Cart/ItemsHeader_template}</div>
+        <div>{message:Cart/QuantityHeader}</div>
+        <div>{message:Cart/TotalHeader}</div>
+      </div>
+      <form class="ecp-form">
+        <div class="ecp-section" data-ecp-handle="products" role="list">
+          <!-- 
+              | Cart__Product_A template is used for products with no thumbnail image |
+
+              or
+
+              | Cart__Product_B template is used for products with a thumbnail image |
+          -->
+        </div>
+        <div class="ecp-section" data-ecp-handle="allocation_section" role="region" aria-labelledby="ecpi_allocation_title">
+          <h3 id="ecpi_allocation_title" class="ecp-section-subtitle">{message:Cart/Allocated/Title}</h3>
+          <div class="ecp-x-list" data-ecp-handle="allocated_products" role="list">
+            <!-- | Cart__AllocatedProduct | -->
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="ecp-cart-summary" data-ecp-handle="summary" role="region" aria-labelledby="ecpi_summary_title" aria-live="polite">
+      <h3 id="ecpi_summary_title">Order Summary</h3>
+
+      <div class="ecp-section-set">
+        <div class="ecp-section" data-ecp-handle="coupon_section">
+          <a href="#" data-ecp-handle="coupon_form_link" data-ecp-action="show-coupon-form">{message:Cart/CouponFormLink}</a>
+          <form class="ecp-form ecp-form-inline" data-ecp-handle="coupon_form">
+            <label for="ecpi_coupon_code">{message:Cart/EnterCoupon}</label><input type="text" id="ecpi_coupon_code" name="coupon_code" size="12" maxlength="50" autocomplete="off"> <button data-ecp-action="apply-coupon">{message:Cart/CouponButton}</button>
+            <div class="ecp-form-inline-result" data-ecp-handle="coupon_is_invalid" role="alert">{message:Cart/CouponIsInvalid_template}</div>
+            <div class="ecp-form-inline-result" data-ecp-handle="coupon_is_not_best" role="alert">{message:Cart/CouponIsNotBest_template}</div>
+          </form>          
+          <div class="ecp-coupon-info" data-ecp-handle="coupon_info">
+            <div class="ecp-coupon-info-message" data-ecp-handle="coupon_is_for_order" role="alert">{message:Cart/CouponIsForOrder_template}</div>
+            <div class="ecp-coupon-info-message" data-ecp-handle="coupon_is_for_free_shipping" role="alert">{message:Cart/CouponIsForFreeShipping_template}</div>
+            <div class="ecp-coupon-info-message" data-ecp-handle="coupon_is_for_flat_shipping" role="alert">{message:Cart/CouponIsForFlatShipping_template}</div>
+            <div class="ecp-coupon-info-remove" data-ecp-handle="coupon_remove"><a href="#" data-ecp-action="remove-coupon">x</a></div>
+          </div>
+        </div>
+        <div class="ecp-section" data-ecp-handle="zip_section">
+          <a href="#" data-ecp-handle="zip_form_link" data-ecp-action="show-zip-form">{message:Cart/Summary/ZipFormLink}</a>
+          <form class="ecp-form ecp-form-inline" data-ecp-handle="zip_form">
+            <label for="ecpi_ship_estimate_zip_1">{message:Cart/Summary/EnterZip}</label><input type="text" id="ecpi_ship_estimate_zip_1" name="ship_estimate_zip" size="5" maxlength="5" autocomplete="off"> <button data-ecp-action="apply-zip">{message:Cart/Summary/ChangeZipOK}</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="ecp-section">
+        <div class="ecp-grid" role="table">
+          <div class="ecp-grid-row ecp-clearfix" role="row">
+            <span class="ecp-grid-col-6" role="rowheader">{message:Cart/Summary/Subtotal} ({message:items_quantity_total})</span>
+            <span class="ecp-grid-col-6 ecp-text-right" role="cell">
+              <span data-ecp-handle="items_discounted">
+                <span class="ecp-price-regular" aria-label="{message:Cart/Summary/SubtotalLabel}">{currency:items_subtotal}</span><span class="ecp-price-discounted" aria-label="{message:Cart/Summary/SubtotalDiscountedLabel}">{currency:items_total}</span>
+              </span>
+              <span data-ecp-handle="items_not_discounted">
+                <span class="ecp-price" aria-label="{message:Cart/Summary/SubtotalLabel}">{currency:items_subtotal}</span>
+              </span>
+            </span>
+          </div>
+          <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_deposit_row" role="row">
+            <span class="ecp-grid-col-8" role="rowheader">{message:deposit_label}</span>
+            <span class="ecp-grid-col-4 ecp-text-right" role="cell">{currency:total_deposit}</span>
+          </div>
+          <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_shipping_row" role="row">
+            <span class="ecp-grid-col-8" role="rowheader">{message:Cart/Summary/Shipping_template} <a href="#" data-ecp-action="show-zip-change-form">{message:shipping_zip}</a></span>
+            <span class="ecp-grid-col-4 ecp-text-right" data-ecp-handle="total_shipping" role="cell">
+              <span data-ecp-handle="shipping_discounted">
+                <span class="ecp-price-regular" aria-label="{message:Cart/Summary/ShippingTotalLabel}">{currency:total_shipping}</span><span class="ecp-price-discounted" aria-label="{message:Cart/Summary/ShippingDiscountedLabel}">{currency:total_shipping_extended}</span>
+              </span>
+              <span data-ecp-handle="shipping_not_discounted">
+                <span class="ecp-price" aria-label="{message:Cart/Summary/ShippingTotalLabel}">{currency:total_shipping}</span>
+              </span>
+            </span>
+          </div>
+          <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_tax_row" role="row">
+            <span class="ecp-grid-col-8" role="rowheader">
+              <span data-ecp-handle="tax_on_shipping">{message:Cart/Summary/TaxTotalShip_template}</span>
+              <span data-ecp-handle="tax_on_pickup">{message:Cart/Summary/TaxTotalPickup_template}</span>
+            </span>
+            <span class="ecp-grid-col-4 ecp-text-right" data-ecp-handle="total_tax" role="cell">{currency:total_tax}</span>
+          </div>
+          <div class="ecp-grid-row ecp-clearfix ecp-grid-row-insert" data-ecp-handle="zip_change_form_row" role="row">
+            <span class="ecp-grid-col-12">
+              <form class="ecp-form ecp-form-inline">
+                <label for="ecpi_ship_estimate_zip_2">{message:Cart/Summary/ChangeZip}</label><input type="text" id="ecpi_ship_estimate_zip_2" name="ship_estimate_zip" size="5" maxlength="5" autocomplete="off"> <button data-ecp-action="apply-zip-change">{message:Cart/Summary/ChangeZipOK}</button> <button class="ecp-secondary" data-ecp-action="cancel-zip-change">{message:Cart/Summary/ChangeZipCancel}</button>
+              </form>
+            </span>
+          </div>
+          <div class="ecp-grid-row ecp-clearfix" data-ecp-handle="total_fees_row" role="row">
+            <span class="ecp-grid-col-8" role="rowheader">{message:Cart/Summary/FeesTotal}</span>
+            <span class="ecp-grid-col-4 ecp-text-right" role="cell">{currency:total_fees}</span>
+          </div>
+          <div class="ecp-grid-row ecp-grid-row-topline ecp-clearfix" data-ecp-handle="total_row" role="row">
+            <span class="ecp-grid-col-6" role="rowheader"><strong>{message:Cart/Summary/GrandTotal}</strong></span>
+            <span class="ecp-grid-col-6 ecp-text-right" data-ecp-handle="total" role="cell"><strong>{currency:total}</strong></span>
+          </div>
+          <div class="ecp-grid-row ecp-grid-row-topline ecp-clearfix" data-ecp-handle="discount_names_row" role="row">
+            <span class="ecp-grid-col-12" role="rowheader">
+              <ul class="ecp-icon-list" data-ecp-handle="discount_names" role="list"> 
+                <!-- | Cart__DiscountName template | -->
+              </ul>
+            </span>
+          </div>
+        </div>
+        <div class="ecp-callout-warning" data-ecp-handle="allocation_minimum_quantity">
+          <a href="{message:__allocation_link}">{message:Cart/Summary/AllocationMinQuantity_template}</a>
+        </div>
+        <form class="ecp-form">
+          <button data-ecp-action="checkout" data-ecp-handle="checkout_button">{message:Cart/Summary/CheckoutButton}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <form class="ecp-form">
+    <button class="ecp-secondary ecp-desktop-auto" data-ecp-action="load-store" data-ecp-handle="shop_button">{message:Cart/ShopButton}</button>
+  </form>
+</div> 

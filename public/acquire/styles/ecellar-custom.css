@@ -1,0 +1,2168 @@
+/* eCellar Custom CSS */
+
+/* Import product-specific styles */
+@import url('./ecellar-products.css');
+
+/* General Styles */
+.ecp-wrapper {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mini Cart Styles */
+.ecp-minicart {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  max-width: 90vw;
+}
+
+.ecp-minicart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+}
+
+.ecp-minicart-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+}
+
+.ecp-minicart-count {
+  background-color: #ea182c;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.ecp-minicart-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+}
+
+.ecp-minicart-close:hover {
+  color: #ea182c;
+}
+
+.ecp-minicart-body {
+  padding: 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.ecp-minicart-empty {
+  text-align: center;
+  padding: 24px 0;
+  color: #ffffff;
+}
+
+.ecp-minicart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ecp-minicart-item {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  position: relative;
+}
+
+.ecp-minicart-item-image {
+  width: 60px;
+  height: 80px;
+  overflow: hidden;
+  margin-right: 16px;
+}
+
+.ecp-minicart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.ecp-minicart-item-details {
+  flex: 1;
+}
+
+.ecp-minicart-item-name {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.ecp-minicart-item-price {
+  font-weight: 600;
+  color: #ea182c;
+  margin-top: 4px;
+}
+
+.ecp-minicart-item-quantity {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.ecp-minicart-item-remove {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.ecp-minicart-item-remove:hover {
+  color: #ea182c;
+}
+
+.ecp-minicart-footer {
+  padding: 16px;
+  border-top: 1px solid #333;
+}
+
+.ecp-minicart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.ecp-minicart-subtotal-label {
+  color: #ffffff;
+}
+
+.ecp-minicart-subtotal-value {
+  color: #ea182c;
+}
+
+.ecp-minicart-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.ecp-minicart-view-cart,
+.ecp-minicart-checkout {
+  flex: 1;
+  padding: 12px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ecp-minicart-view-cart {
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #ffffff;
+}
+
+.ecp-minicart-view-cart:hover {
+  background-color: #333;
+  border-color: #666;
+}
+
+.ecp-minicart-checkout {
+  background-color: #ea182c;
+  border: 1px solid #ea182c;
+  color: white;
+}
+
+.ecp-minicart-checkout:hover {
+  background-color: #c01525;
+}
+
+/* === CART STYLES === */
+.ecp_Cart,
+.ecp_SideCart {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.ecp_Cart {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Cart header styling */
+.ecp_Cart h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ea182c;
+  color: #ffffff;
+}
+
+.ecp_Cart .item-count {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+/* Hide cart headers */
+.ecp_Cart .ecp-cart-contents-header {
+  display: none !important;
+}
+
+/* Force single column layout for cart items */
+.ecp_Cart .ecp-cart-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+  width: 100% !important;
+}
+
+/* Cart item layout - Use Flex */
+.ecp_Cart .ecp-cart-item {
+  display: flex !important; 
+  align-items: center !important; /* Vertically center align all contents */
+  gap: 1rem !important; /* Reduced gap */
+  width: 100% !important; 
+  max-width: 100% !important;
+  padding: 0.75rem 1rem !important; /* Reduced padding (less top/bottom) */
+  background: rgba(26, 26, 26, 0.8) !important;
+  border: none !important; /* Remove border */
+  border-bottom: 1px solid #333 !important; /* Thin bottom border only */
+  border-radius: 0px !important; /* Remove border radius */
+  margin: 0 !important; /* Remove bottom margin, rely on border */
+  position: relative !important;
+  float: none !important;
+  clear: both !important;
+  box-sizing: border-box !important; 
+}
+
+.ecp_Cart .ecp-cart-item-image {
+  flex: 0 0 60px !important; /* Even smaller fixed width */
+  height: auto !important; 
+  margin: 0 !important; 
+  display: block !important; 
+}
+
+/* Container for Name & Price */
+.ecp_Cart .ecp-cart-item-details {
+  flex: 1 1 auto !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.1rem; /* Minimal gap between name and price */
+  margin-right: 1rem; 
+}
+
+.ecp_Cart .ecp-cart-item-title {
+  font-size: 0.95rem !important; /* Slightly smaller */
+  font-weight: 500 !important; 
+  margin: 0 !important;
+  color: #ffffff !important;
+  line-height: 1.3; /* Adjust line height */
+}
+
+.ecp_Cart .ecp-cart-item-price {
+  font-size: 0.9rem !important; /* Slightly smaller */
+  color: #ffffff !important; 
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+/* Quantity selector styling */
+.ecp_Cart .ecp-cart-item-quantity {
+  flex: 0 0 auto !important; 
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important; 
+  margin-right: 1rem; /* Reduced space between quantity and total */
+}
+
+.ecp_Cart .ecp-cart-item-quantity select {
+  width: 50px !important; /* Smaller width */
+  padding: 0.25rem !important; /* Reduced padding */
+  border: 1px solid #444 !important;
+  border-radius: 4px !important;
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  font-size: 0.9rem; /* Match text size */
+  text-align: center !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.4rem center !important; /* Adjust arrow */
+  background-size: 0.5em !important; /* Smaller arrow */
+}
+
+/* Total price styling */
+.ecp_Cart .ecp-cart-item-total {
+  flex: 0 0 auto !important; 
+  min-width: 60px; /* Reduced min-width */
+  text-align: right !important;
+  display: flex !important;
+  align-items: center !important; 
+  margin-left: auto; 
+}
+
+.ecp_Cart .ecp-cart-item-total .total-value {
+  font-size: 0.95rem !important; /* Match title size */
+  font-weight: 500 !important; 
+  color: #ffffff !important; 
+}
+
+/* Remove Button - Positioned absolutely */
+.ecp_Cart .ecp-cart-item-remove { 
+    position: absolute !important;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 28px !important;
+    height: 28px !important;
+    background: none !important;
+    border: none !important;
+    color: #aaa !important; 
+    cursor: pointer !important;
+    font-size: 1rem !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1;
+}
+
+.ecp_Cart .ecp-cart-item-remove:hover {
+    color: #ea182c !important;
+}
+
+/* Remove potentially conflicting grid styles from previous attempt */
+.ecp_Cart .ecp-cart-item-info {
+    /* Remove grid properties if they exist */
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+}
+.ecp_Cart .ecp-cart-item-details,
+.ecp_Cart .ecp-cart-item-price,
+.ecp_Cart .ecp-cart-item-quantity,
+.ecp_Cart .ecp-cart-item-total {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    justify-self: unset !important;
+    align-items: unset !important; 
+}
+
+/* === ADDED: Force allocated items in CART to be block display === */
+.ecp_Cart .ecp-section[data-ecp-handle="allocation_section"] {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 2rem !important;
+}
+
+.ecp_Cart .ecp-section[data-ecp-handle="allocation_section"] div[data-ecp-handle="allocated_products"] {
+  display: block !important;
+  width: 100% !important;
+}
+
+.ecp_Cart .ecp-section[data-ecp-handle="allocation_section"] .ecp-list-item {
+  display: block !important;
+  margin-bottom: 1rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: rgba(26, 26, 26, 0.8) !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+}
+
+/* Allocated Items Header Styling */
+.ecp_Cart .ecp-section[data-ecp-handle="allocation_section"] h3.ecp-section-subtitle,
+.ecp_Cart .ecp-section[data-ecp-handle="allocation_section"] .ecp-section-title { /* Target common title classes */
+    background-color: #333 !important; /* Darker background */
+    color: #ffffff !important; /* White text */
+    padding: 0.75rem 1rem !important; /* Add some padding */
+    margin: 0 0 1rem 0 !important; /* Bottom margin */
+    border-radius: 4px !important; /* Slightly rounded corners */
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: none !important; /* Remove potential borders */
+}
+
+/* Order summary styling */
+.ecp_Cart .ecp-cart-summary {
+  background: none !important; /* Remove background */
+  border: none !important; /* Remove border */
+  padding: 0 0 0 1rem !important; /* Keep some left padding for separation */
+  margin-top: 0 !important;
+}
+
+.ecp_Cart .ecp-cart-summary h2 {
+  font-size: 1.1rem !important; /* Adjust size */
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #555 !important; /* Subtle border */
+  padding-bottom: 0.5rem !important;
+  text-align: left;
+}
+
+.ecp_Cart .ecp-cart-summary-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  border-bottom: 1px solid #444 !important; /* Darker border */
+  font-size: 0.95rem !important;
+}
+
+.ecp_Cart .ecp-cart-summary-row:last-of-type {
+    border-bottom: none !important; /* No border on last row (Total) */
+}
+
+.ecp_Cart .ecp-cart-summary-label {
+  color: #ffffff !important;
+  font-weight: 400 !important; /* Lighter weight */
+}
+
+.ecp_Cart .ecp-cart-summary-value {
+  color: #ffffff !important; /* White value */
+  font-weight: 500 !important;
+}
+
+/* Style the Proceed to Checkout button */
+.ecp_Cart .ecp-cart-summary button[data-ecp-action="checkout"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    background-color: #ea182c;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.ecp_Cart .ecp-cart-summary button[data-ecp-action="checkout"]:hover {
+    background-color: #c01525;
+}
+
+/* Prevent any allocation grid styles from bleeding */
+/* === REMOVED CONFLICTING RULE === */
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .ecp_Cart .ecp-cart-wrapper {
+    flex-direction: row !important; 
+    align-items: flex-start; 
+  }
+  
+  .ecp_Cart .ecp-cart-contents {
+    flex: 1 !important; 
+    margin-right: 2rem !important;
+    display: block !important; 
+    padding: 0 !important; /* REMOVED padding from contents */
+  }
+
+  /* Ensure product section is block */
+  .ecp_Cart .ecp-cart-contents .ecp-section[data-ecp-handle="products"] {
+      display: block !important;
+      width: 100% !important;
+  }
+
+  .ecp_Cart .ecp-cart-contents .ecp-cart-item {
+     margin-bottom: 1rem; 
+  }
+  
+  .ecp_Cart .ecp-cart-summary {
+    flex: 0 0 350px !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* Mobile layout adjustments for Cart */
+@media (max-width: 768px) {
+  .ecp_Cart {
+    padding: 1rem;
+  }
+
+  /* Stack cart item elements vertically */
+  .ecp_Cart .ecp-cart-item {
+    padding: 0.5rem !important; /* Further reduce padding on mobile */
+    gap: 0.75rem !important;
+  }
+
+  .ecp_Cart .ecp-cart-item-image {
+    flex-basis: 50px !important; /* Even smaller on mobile */
+  }
+  
+  /* Adjust info container */
+   .ecp_Cart .ecp-cart-item-details {
+      margin-right: 0.75rem; /* Less space */
+   }
+
+  /* Make Quantity and Total stack below name/price */
+  .ecp_Cart .ecp-cart-item-info {
+      display: flex !important;
+      flex-direction: column !important; /* Stack name/price, qty, total */
+      flex: 1 1 auto;
+      align-items: flex-start !important; /* Align left */
+      gap: 0.5rem !important;
+  }
+
+  .ecp_Cart .ecp-cart-item-details { /* Name/Price block */
+     display: block; 
+     width: 100%;
+  }
+
+  .ecp_Cart .ecp-cart-item-quantity {
+     margin-right: 0.75rem; /* Less space */
+  }
+
+  .ecp_Cart .ecp-cart-item-total {
+      min-width: 50px; /* Less min-width */
+  }
+
+   .ecp_Cart .ecp-cart-item-remove {
+      top: 0.5rem !important;
+      right: 0.5rem !important;
+      width: 24px !important;
+      height: 24px !important;
+      font-size: 0.9rem !important;
+   }
+}
+
+/* Category Styles */
+.ecp-categories {
+  margin-top: 40px;
+}
+
+.ecp-category-title {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 2px solid #ea182c !important;
+  color: #ffffff !important;
+  text-align: center !important;
+}
+
+.ecp-category-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: #ffffff;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ADDED: Remove padding from form wrapper within cart */
+.ecp_Cart .ecp-form {
+    padding: 0 !important;
+    margin: 0 !important; /* Also remove margin */
+    background: none !important; /* Remove background */
+    border: none !important; /* Remove border */
+}
+
+/* === FORM STYLES === */
+.ecp-form {
+  margin-bottom: 24px;
+  color: #ffffff;
+  background-color: rgba(26, 26, 26, 0.6);
+  padding: 1rem; /* Reduced padding */
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+/* Summary text color */
+p.ecp-summary {
+  color: #ffffff !important;
+}
+
+.ecp-form-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 2px solid #ea182c;
+  padding-bottom: 12px;
+}
+
+.ecp-form input[type=text],
+.ecp-form input[type=date],
+.ecp-form input[type=number],
+.ecp-form input[type=password],
+.ecp-form input[type=email],
+.ecp-form select {
+  border: 1px solid #444;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  background-color: #2a2a2a;
+  color: #ffffff !important;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.ecp-form select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+  padding-right: 2rem;
+}
+
+.ecp-form button {
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  background-color: #ea182c;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ecp-form button:hover {
+  background-color: #c01525;
+}
+
+.ecp-form textarea {
+  border: 1px solid #444;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+  min-height: 120px;
+  margin-bottom: 1rem;
+}
+
+.ecp-form input[type=text]:focus,
+.ecp-form input[type=date]:focus,
+.ecp-form input[type=number]:focus,
+.ecp-form input[type=password]:focus,
+.ecp-form input[type=email]:focus,
+.ecp-form select:focus,
+.ecp-form textarea:focus {
+  outline: none;
+  border-color: #ea182c;
+  box-shadow: 0 0 0 2px rgba(234, 24, 44, 0.25);
+}
+
+.ecp-form-input-label {
+  display: block;
+  padding: 0.75rem 0;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.ecp-form-input-info {
+  display: block;
+  padding: 0.5rem 0;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.ecp-form-tip {
+  color: #ffffff;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  background-color: rgba(42, 42, 42, 0.5);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-left: 3px solid #ea182c;
+}
+
+.ecp-form-fieldset {
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 0;
+}
+
+.ecp-form-fieldset-scrunched {
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 0;
+}
+
+.ecp-form-fieldset-scrunched input[type=text],
+.ecp-form-fieldset-scrunched input[type=date],
+.ecp-form-fieldset-scrunched input[type=number],
+.ecp-form-fieldset-scrunched input[type=password],
+.ecp-form-fieldset-scrunched input[type=email],
+.ecp-form-fieldset-scrunched select {
+  margin-bottom: 2px; /* Added minimal bottom margin for spacing */
+  margin-top: -1px; 
+  position: relative;
+}
+
+.ecp-form-fieldset-scrunched input:first-child,
+.ecp-form-fieldset-scrunched select:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.ecp-form-fieldset-scrunched input:last-child,
+.ecp-form-fieldset-scrunched select:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.ecp-form-buttonset-2 button {
+  width: 47%;
+}
+
+.ecp-form-buttonset-2 button:first-child {
+  float: left;
+}
+
+.ecp-form-buttonset-2 button:last-child {
+  float: right;
+}
+
+.ecp-form-linkset a {
+  margin-right: 1rem;
+  color: #ea182c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ecp-form-linkset a:last-child {
+  margin-right: 0;
+}
+
+.ecp-form-linkset a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+ul.ecp-form-radios {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.ecp-form-radios li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+ul.ecp-form-radios li input[type=radio] {
+  margin-right: 0.5rem;
+  accent-color: #ea182c;
+}
+
+ul.ecp-form-checkboxes {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.ecp-form-checkboxes li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+ul.ecp-form-checkboxes li input[type=checkbox] {
+  margin-right: 0.5rem;
+  accent-color: #ea182c;
+}
+
+.ecp-form-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*=ecp-form-row-col-] {
+  display: block;
+  float: left;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+[class*=ecp-form-row-col-]:first-child {
+  padding-left: 0;
+}
+
+[class*=ecp-form-row-col-]:last-child {
+  padding-right: 0;
+}
+
+.ecp-form-row-col-25 {
+  width: 25%;
+}
+
+.ecp-form-row-col-75 {
+  width: 75%;
+}
+
+/* === ALLOCATION RELEASE STYLES === */
+
+/* Main container styling */
+.ecp_AllocationCart {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 !important; /* Set container padding to 0 */
+  background: #000;
+  border-radius: 12px;
+}
+
+/* Stepper Navigation */
+.ecp-stepper {
+    padding: 1rem 0;
+    list-style: none;
+    margin: 0 0 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ecp-stepper-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #555; /* Default background for inactive steps */
+    color: #bbb; /* Default text color for inactive steps */
+    border: 2px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: default; /* Default cursor */
+    transition: all 0.3s ease;
+}
+
+.ecp-stepper-line {
+    flex-grow: 1;
+    height: 3px;
+    background-color: #555; /* Default background for inactive lines */
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.ecp-stepper-step.ecp-stepper-active {
+    background-color: #ea182c !important; /* Red background for active steps */
+    border-color: #ea182c !important; /* Red border for active steps */
+    color: #ffffff !important; /* White text for active steps */
+    cursor: pointer !important; /* Pointer cursor for active/clickable steps */
+}
+
+.ecp-stepper-line.ecp-stepper-active {
+    background-color: #ea182c !important; /* Red background for active lines */
+}
+
+/* Callouts and Messages */
+.ecp-callout-warning {
+  background-color: rgba(42, 42, 42, 0.8);
+  border: 2px dotted #ea182c;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.ecp-section-message {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  background-color: rgba(26, 26, 26, 0.6);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+/* Allocation Cart Styles */
+.ecp_AllocationCart h3 {
+  border-bottom: 2px solid #ea182c;
+  padding-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ecp_AllocationCart h4 {
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #000000;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ecp_AllocationCart div.ecp-html-subtitle {
+  font-style: italic;
+  margin: 0.5rem 0 0;
+  color: #ffffff;
+}
+
+/* === ADDED: Increase spacing between paragraphs in allocation cart intro === */
+.ecp_AllocationCart > .ecp-html-content p {
+    margin-bottom: 1em; /* Add space below paragraphs */
+    line-height: 1.6; /* Ensure good line height */
+}
+.ecp_AllocationCart > .ecp-html-content p:last-child {
+    margin-bottom: 0; /* Remove margin from the very last paragraph */
+}
+/* ======================================================================= */
+
+.ecp_AllocationCart .ecp-columns {
+  margin: 1rem 0 2rem;
+  display: flow-root;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecp_AllocationCart .ecp-columns-left {
+  float: left;
+  width: 40%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecp_AllocationCart .ecp-columns-right {
+  float: right;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Convert list to grid - Apply 3-column layout */
+.ecp_AllocationCart div[data-ecp-handle="allocated_products"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
+  margin: 30px 0 !important;
+  width: 100%;
+}
+
+/* Target any list items regardless of parent structure */
+.ecp_AllocationCart div[data-ecp-handle="allocated_products"] > .ecp-list-item {
+  border: 1px solid #444;
+  border-bottom: none !important; 
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 0 !important;
+  background-color: #ffffff; /* Keep white background for items */
+  display: flex;
+  flex-direction: column;
+  width: auto !important;
+  max-width: none !important;
+  color: #000000 !important; /* Ensure default text is black */
+}
+
+.ecp_AllocationCart .ecp_list-item h4 {
+    /* Use allocation cart specific h4 style */
+    color: #000000 !important; /* Ensure title is black */
+}
+
+/* Fix spacing within Purchase/Request rows */
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row[data-ecp-handle="quantity_row"],
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row[data-ecp-handle="limited_request_row"] {
+    display: flex !important;
+    align-items: center !important;
+    /* justify-content: space-between; Remove for better wrapping control */
+    flex-wrap: wrap !important; /* Allow wrapping */
+    width: 100%;
+    gap: 0.5rem; /* Reduced column gap (was 0.5rem 1rem) */
+    margin-bottom: 0.75rem; 
+}
+
+/* Apply flexible sizing to the grid spans */
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span[class*="ecp-grid-col-"] {
+    padding: 0 !important; 
+    line-height: 1.5; 
+    color: #000 !important;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span.ecp-grid-col-3:nth-child(1) { /* Purchase/Request Label Span */
+    flex: 1 1 25%; /* Allow shrink/grow, aim for ~25% */
+    min-width: 70px; /* Prevent label getting too small */
+    text-align: right;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span.ecp-grid-col-3:nth-child(2) { /* Select Box Span */
+    flex: 1 1 25%; 
+    min-width: 85px; 
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span.ecp-grid-col-3:nth-child(3) { /* Subtotal/Value Label Span */
+    flex: 1 1 25%; 
+    min-width: 70px; 
+    text-align: right;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span.ecp-grid-col-3:nth-child(4) { /* Value ($0.00) Span */
+    flex: 1 1 25%; 
+    min-width: 85px; 
+    text-align: right;
+}
+
+/* Style elements INSIDE the spans */
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row label.ecp-form-input-label { 
+    display: block; /* Take full width of parent span */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    color: #000 !important;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row select { 
+    display: block;
+    width: 100% !important; /* Fill parent span */
+    min-width: 75px; /* Absolute minimum width */
+    box-sizing: border-box !important; /* Include padding in width */
+    padding: 0.25rem 2rem 0.25rem 0.5rem !important; /* Generous right padding */
+    margin: 0 !important;
+    color: #000000 !important;
+    background-color: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    text-align: center;
+    text-align-last: center;
+    -moz-text-align-last: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.5rem center !important;
+    background-size: 0.6em auto !important;
+    vertical-align: middle; 
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span.ecp-form-input-info { 
+    display: block; /* Take full width of parent span */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: #000 !important;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-grid-row span.ecp-form-input-info[data-ecp-handle] { /* Value */
+    font-weight: 600;
+}
+
+/* ... existing code ... */
+
+.ecp_AllocationCart .ecp-list-item:last-child {
+  border: 1px solid #444;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-html-content {
+  font-size: 0.9rem;
+  color: #000000;
+}
+
+.ecp_AllocationCart .ecp-price {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ea182c;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ecp_AllocationCart .ecp-section {
+  margin-bottom: 2rem;
+}
+
+.ecp_AllocationCart .ecp-subtotals {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000000;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+
+.ecp_AllocationCart select,
+.ecp_AllocationCart input[type=text] {
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #000000;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.ecp_AllocationCart select {
+  text-align-last: center;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+  padding-right: 2rem;
+}
+
+.ecp_AllocationCart .ecp-form-input-label,
+.ecp_AllocationCart .ecp-form-input-info {
+  color: #000000;
+}
+
+.ecp_AllocationCart .ecp-section-message {
+  color: #ffffff;
+  background-color: rgba(26, 26, 26, 0.6);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.ecp_AllocationCart select[disabled],
+.ecp_AllocationCart input[type=text][disabled] {
+  background-color: #f0f0f0;
+  color: #ffffff;
+  border-color: #ddd;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ecp_AllocationCart .ecp-callout-warning {
+  margin-bottom: 1rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .ecp_AllocationCart div[data-ecp-handle="allocated_products"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ecp_AllocationCart div[data-ecp-handle="allocated_products"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .ecp_AllocationCart {
+    padding: 1rem;
+  }
+  
+  .ecp_AllocationCart .ecp-columns-left,
+  .ecp_AllocationCart .ecp-columns-right {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .ecp_AllocationCart .ecp-columns-right {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Allocation Unavailable Styles */
+.ecp_AllocationUnavailable .ecp-summary {
+  margin-bottom: 2rem;
+  background-color: rgba(26, 26, 26, 0.6);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  color: #ffffff;
+}
+
+/* === ORDER REVIEW STYLES === */
+.ecp_OrderReview {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 2rem; REMOVED */
+  background: none !important; /* REMOVED background */
+  border-radius: 0px !important; /* Remove radius */
+  box-shadow: none !important; /* Remove shadow */
+}
+
+.ecp_OrderReview h2 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #ea182c !important;
+  padding-bottom: 12px !important;
+  text-align: center !important;
+}
+
+.ecp_OrderReview .ecp-section {
+  background: rgba(42, 42, 42, 0.6);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem; /* Reduced padding */
+  margin-bottom: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.ecp_OrderReview .ecp-section:hover {
+  background: rgba(42, 42, 42, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ecp_OrderReview .ecp-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  border-bottom: 1px solid #ea182c;
+  padding-bottom: 8px;
+}
+
+.ecp_OrderReview .ecp-section-menu {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #ea182c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.ecp_OrderReview .ecp-section-menu:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* === ORDER REVIEW AND CHECKOUT CART ITEMS === */
+/* Reset default list styles */
+.ecp_OrderReview div[data-ecp-handle="cart_items"],
+.ecp_OrderReview .ecp-x-list[data-ecp-handle="cart_items"] {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important; /* Use border/padding on items for separation */
+  width: 100% !important;
+  margin: 0 0 2rem 0 !important; /* Add margin below item list */
+  padding: 0 !important;
+  list-style: none !important;
+  background: rgba(26, 26, 26, 0.8) !important; /* Dark background for the list */
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+}
+
+/* Style individual items within Order Review list */
+.ecp_OrderReview .ecp-x-list[data-ecp-handle="cart_items"] .ecp-list-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important; /* Reduced gap */
+  width: 100% !important; 
+  padding: 0.5rem 0.75rem !important; /* Reduced padding */
+  border: none !important;
+  border-bottom: 1px solid #333 !important;
+  margin: 0 !important;
+  background: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  position: relative; /* For remove button */
+}
+
+/* Allow the grid container to grow, but make rows behave */
+.ecp_OrderReview .ecp-x-list[data-ecp-handle="cart_items"] .ecp-list-item .ecp-grid {
+    display: flex !important;
+    flex-direction: column !important; /* Stack rows internally */
+    flex-grow: 1 !important;
+    gap: 0.1rem; /* Minimal gap between title/price and qty/total */
+}
+
+/* Hide specific rows/elements we don't want or will restyle */
+/* .ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(2), /* Hide original price row */ /* DON'T HIDE THE WHOLE ROW */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(2) > span:not([data-ecp-handle="not_discounted"]), /* Hide direct children except the non-discounted container */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(2) span[data-ecp-handle="discounted"], /* Explicitly hide discounted span */
+.ecp_OrderReview .ecp-list-item div[data-ecp-handle="crv_deposit"],
+.ecp_OrderReview .ecp-list-item div[data-ecp-handle="cart_request_quantity"] {
+    display: none !important;
+}
+
+/* Style Title Row */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(1) {
+    display: block !important; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(1) h4 {
+    font-size: 0.95rem !important; 
+    font-weight: 500 !important; 
+    color: #ffffff !important;
+    line-height: 1.3;
+    margin: 0 0 0.1rem 0;
+    padding: 0;
+    text-align: center; /* Center the title */
+}
+
+/* Style the actual price element from row 2 --> HIDE IT */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(2) span[data-ecp-handle="not_discounted"] .ecp-price {
+    display: none !important; /* Hide this price */
+    /* display: block; 
+    font-size: 0.9rem !important; 
+    color: #ffffff !important; 
+    font-weight: 400 !important;
+    margin: 0; 
+    padding: 0; 
+    text-align: left; */
+}
+
+/* Style Quantity/Total Row */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(3) {
+    width: 100%;
+    display: flex !important;
+    justify-content: center; /* Center the flex items */
+    align-items: center;
+    gap: 2rem; /* Adjust gap between centered items */
+    margin: 0.25rem 0 0 0;
+    padding: 0; /* Ensure no extra padding */
+}
+
+/* Hide Qty Label */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-3 {
+    display: none !important;
+}
+
+/* Hide Spacer */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-1 { 
+    display: none !important; 
+}
+
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-2 { /* Quantity Value */
+    min-width: auto; 
+    width: 70px; /* Keep fixed width for alignment */
+    text-align: left; 
+    color: #fff;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5ch;
+    flex-shrink: 0; 
+}
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-2::before {
+  content: 'Qty:';
+  font-size: 0.9rem; 
+  color: #aaa; 
+  font-weight: 400;
+}
+
+.ecp_OrderReview .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-6 { /* Total Value */
+    min-width: auto; 
+    width: 70px; /* Set similar fixed width */
+    text-align: right;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.95rem;
+    /* margin-left: auto; Remove auto margin */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Add Remove button styling */
+.ecp_OrderReview .ecp-list-item-remove { 
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 24px !important;
+    height: 24px !important;
+    color: #aaa !important;
+    cursor: pointer !important;
+    font-size: 1rem !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1;
+    background: none !important;
+    border: none !important;
+}
+.ecp_OrderReview .ecp-list-item-remove:hover {
+    color: #ea182c !important;
+}
+
+/* Cleanup previous grid override attempts */
+.ecp_OrderReview .ecp-list-item .ecp-grid-row {
+  justify-content: unset;
+  margin-bottom: unset; 
+}
+.ecp_OrderReview .ecp-list-item span[class*='ecp-grid-col-']:nth-of-type(3),
+.ecp_OrderReview .ecp-list-item span[class*='ecp-grid-col-']:nth-of-type(4) {
+    flex: unset;
+    order: unset;
+}
+
+/* Image container */
+.ecp_OrderReview .ecp-cart-item-image,
+.ecp_Checkout .ecp-cart-item-image {
+  width: 120px !important;
+  height: 160px !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ecp_OrderReview .ecp-cart-item-image img,
+.ecp_Checkout .ecp-cart-item-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Product details */
+.ecp_OrderReview .ecp-cart-item-details,
+.ecp_Checkout .ecp-cart-item-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  padding: 0.5rem 0 !important;
+}
+
+.ecp_OrderReview .ecp-cart-item-title,
+.ecp_Checkout .ecp-cart-item-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+}
+
+/* Price and quantity section */
+.ecp_OrderReview .ecp-cart-item-price-quantity,
+.ecp_Checkout .ecp-cart-item-price-quantity {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 0.75rem !important;
+  text-align: right !important;
+}
+
+.ecp_OrderReview .ecp-cart-item-price,
+.ecp_Checkout .ecp-cart-item-price {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #ea182c !important;
+  line-height: 1.2 !important;
+}
+
+.ecp_OrderReview .ecp-cart-item-original-price,
+.ecp_Checkout .ecp-cart-item-original-price {
+  font-size: 16px !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: line-through !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.ecp_OrderReview .ecp-cart-item-quantity,
+.ecp_Checkout .ecp-cart-item-quantity {
+  font-size: 16px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+/* Special prices (like CRV) */
+.ecp_OrderReview .ecp-cart-item-crv,
+.ecp_Checkout .ecp-cart-item-crv {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ecp_OrderReview [role="listitem"],
+  .ecp_OrderReview .ecp-list-item,
+  .ecp_OrderReview .ecp-cart-item,
+  .ecp_Checkout .ecp-cart-item {
+    grid-template-columns: 100px 1fr !important;
+    gap: 1.25rem !important;
+    padding: 1.25rem !important;
+  }
+
+  .ecp_OrderReview .ecp-cart-item-image,
+  .ecp_Checkout .ecp-cart-item-image {
+    width: 100px !important;
+    height: 140px !important;
+  }
+
+  .ecp_OrderReview .ecp-cart-item-price-quantity,
+  .ecp_Checkout .ecp-cart-item-price-quantity {
+    grid-column: 2 !important;
+    margin-top: 1rem !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecp_OrderReview [role="listitem"],
+  .ecp_OrderReview .ecp-list-item,
+  .ecp_OrderReview .ecp-cart-item,
+  .ecp_Checkout .ecp-cart-item {
+    grid-template-columns: 1fr !important;
+    padding: 1rem !important;
+  }
+
+  .ecp_OrderReview .ecp-cart-item-image,
+  .ecp_Checkout .ecp-cart-item-image {
+    width: 100% !important;
+    height: 200px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .ecp_OrderReview .ecp-cart-item-details,
+  .ecp_Checkout .ecp-cart-item-details {
+    margin-bottom: 1rem !important;
+  }
+
+  .ecp_OrderReview .ecp-cart-item-price-quantity,
+  .ecp_Checkout .ecp-cart-item-price-quantity {
+    width: 100% !important;
+  }
+}
+
+/* === CHECKOUT STYLES === */
+.ecp_Checkout {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Checkout product items */
+.ecp_Checkout .ecp-cart-item {
+  display: grid !important;
+  grid-template-columns: 100px 1fr auto !important;
+  gap: 1.5rem !important;
+  align-items: start !important;
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  padding: 1.25rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Image container */
+.ecp_Checkout .ecp-cart-item-image,
+.ecp_OrderReview .ecp-cart-item-image {
+  width: 100px !important;
+  height: 140px !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background: #f5f5f5 !important;
+}
+
+.ecp_Checkout .ecp-cart-item-image img,
+.ecp_OrderReview .ecp-cart-item-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Product details */
+.ecp_Checkout .ecp-cart-item-details,
+.ecp_OrderReview .ecp-cart-item-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.ecp_Checkout .ecp-cart-item-title,
+.ecp_OrderReview .ecp-cart-item-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.ecp_Checkout .ecp-cart-item-subtitle,
+.ecp_OrderReview .ecp-cart-item-subtitle {
+  font-size: 14px !important;
+  color: #666666 !important;
+  margin: 0 !important;
+}
+
+/* Price and quantity section */
+.ecp_Checkout .ecp-cart-item-price-quantity,
+.ecp_OrderReview .ecp-cart-item-price-quantity {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 0.5rem !important;
+  text-align: right !important;
+}
+
+.ecp_Checkout .ecp-cart-item-price,
+.ecp_OrderReview .ecp-cart-item-price {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+}
+
+.ecp_Checkout .ecp-cart-item-original-price,
+.ecp_OrderReview .ecp-cart-item-original-price {
+  font-size: 14px !important;
+  color: #666666 !important;
+  text-decoration: line-through !important;
+}
+
+.ecp_Checkout .ecp-cart-item-quantity,
+.ecp_OrderReview .ecp-cart-item-quantity {
+  font-size: 14px !important;
+  color: #666666 !important;
+}
+
+/* Special prices (like CRV) */
+.ecp_Checkout .ecp-cart-item-crv,
+.ecp_OrderReview .ecp-cart-item-crv {
+  font-size: 14px !important;
+  color: #666666 !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Virtual Gift Card specific styles */
+.ecp_Checkout .ecp-cart-item-gift-card,
+.ecp_OrderReview .ecp-cart-item-gift-card {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.ecp_Checkout .ecp-cart-item-gift-card-recipient,
+.ecp_OrderReview .ecp-cart-item-gift-card-recipient {
+  font-size: 14px !important;
+  color: #666666 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ecp_Checkout .ecp-cart-item,
+  .ecp_OrderReview .ecp-cart-item {
+    grid-template-columns: 80px 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 1rem !important;
+  }
+
+  .ecp_Checkout .ecp-cart-item-image,
+  .ecp_OrderReview .ecp-cart-item-image {
+    width: 80px !important;
+    height: 120px !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  .ecp_Checkout .ecp-cart-item-price-quantity,
+  .ecp_OrderReview .ecp-cart-item-price-quantity {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+  .ecp_Checkout .ecp-cart-item,
+  .ecp_OrderReview .ecp-cart-item {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+
+  .ecp_Checkout .ecp-cart-item-image,
+  .ecp_OrderReview .ecp-cart-item-image {
+    width: 100% !important;
+    height: 200px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .ecp_Checkout .ecp-cart-item-details,
+  .ecp_OrderReview .ecp-cart-item-details {
+    margin-bottom: 1rem !important;
+  }
+
+  .ecp_Checkout .ecp-cart-item-price-quantity,
+  .ecp_OrderReview .ecp-cart-item-price-quantity {
+    width: 100% !important;
+  }
+}
+
+/* Reduce spacing between price and status message in allocation cards */
+.ecp_AllocationCart .ecp-list-item .ecp-price {
+  margin-bottom: 0.5rem !important; /* Reduced from default */
+  text-align: center;
+}
+
+.ecp_AllocationCart .ecp-list-item .ecp-section-message {
+  margin-top: 0.5rem !important; /* Reduced margin */
+  margin-bottom: 1rem !important;
+}
+
+/* New styles for stacked allocation controls (Block Layout) */
+.ecp_AllocationCart .allocation-controls-block {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.ecp_AllocationCart .control-group {
+  margin-bottom: 1.25rem; /* Space between Purchase and Request groups */
+}
+
+.ecp_AllocationCart .control-label {
+  display: block !important; /* Stack elements - Added !important */
+  font-size: 0.9rem;
+  color: #000000;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+.ecp_AllocationCart .control-input {
+  display: block !important; /* Stack elements - Added !important */
+  width: 100% !important; /* Make input/select full width */
+  max-width: 100px !important; /* But limit max width */
+  margin: 0 0 0.6rem 0 !important; /* Bottom margin */
+  text-align: center;
+  text-align-last: center;
+  background-color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #000000;
+  padding: 0.5rem !important;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.ecp_AllocationCart input.control-input {
+ padding: 0.5rem 0.5rem !important; /* Ensure consistent padding */
+}
+
+.ecp_AllocationCart .control-value-line {
+  display: flex !important; /* Use flex for label/value on same line - Added !important */
+  justify-content: space-between !important; /* Added !important */
+  align-items: baseline !important; /* Added !important */
+  font-size: 0.9rem;
+  color: #000000;
+  padding-top: 0.2rem;
+}
+
+.ecp_AllocationCart .value-label {
+  font-weight: 500;
+}
+
+.ecp_AllocationCart .value-amount {
+  font-weight: 600;
+}
+
+/* Remove old/conflicting control styles */
+.ecp_AllocationCart .control-row,
+.ecp_AllocationCart .control-value {
+  display: none !important; /* Hide elements from previous attempt */
+}
+
+/* Styles for selects within allocation cards */
+.ecp_AllocationCart .ecp-list-item select,
+.ecp_AllocationCart .ecp-list-item input[type=text] {
+  /* Keep general select/input styles if needed, but specific layout handled above */
+  /* text-align: center; */
+  /* background-color: #ffffff; */
+  /* border: 1px solid #444; */
+  /* border-radius: 4px; */
+  /* color: #000000; */
+  /* padding: 0.75rem 0.5rem; */
+  /* width: 100%; */
+  /* max-width: 150px; */
+  /* margin: 0 auto 1rem; */
+  /* transition: border-color 0.2s ease; */
+}
+
+/* ADDED: Remove padding from form wrapper within ORDER REVIEW */
+.ecp_OrderReview .ecp-form {
+    padding: 0 !important;
+    margin: 0 !important; /* Also remove margin */
+    background: none !important; /* Optional: Remove background if needed */
+    border: none !important; /* Optional: Remove border if needed */
+}
+
+/* === ADDED: Ensure Order Review Select Text is White === */
+/* .ecp_OrderReview .ecp-form select {
+    color: #ffffff !important; 
+} */ /* This rule might now be redundant, commenting out */
+
+/* Attempt to style options (browser support varies) */
+.ecp_OrderReview .ecp-form select option {
+    color: #000000; /* Standard black text for options */
+    background-color: #ffffff; /* Standard white background for options */
+}
+
+/* === ADDED: Dashboard List Spacing === */
+.ecp_Dashboard .ecp-item-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0; /* Add some margin around the list itself */
+}
+
+.ecp_Dashboard .ecp-item-list li {
+    margin-bottom: 1rem; /* Add spacing below each list item */
+}
+
+/* === ADDED: Highlight Current Allocation & Add Separator === */
+.ecp_Dashboard .ecp-item-list li[data-ecp-handle="allocation_link"] {
+    border-top: 1px solid #555; /* Add a separator line above */
+    border-bottom: 1px solid #555; /* Add a separator line below */
+    padding-top: 1rem; /* Add space above the text */
+    padding-bottom: 1rem; /* Add space below the line */
+    margin-bottom: 1rem; /* Ensure margin is consistent */
+}
+
+.ecp_Dashboard .ecp-item-list li[data-ecp-handle="allocation_link"] a {
+    color: #f4f4f5; /* Brighter color (zinc-100) for highlight */
+    font-weight: 600; /* Make it bolder */
+}
+/* Keep the hover style consistent */
+.ecp_Dashboard .ecp-item-list li[data-ecp-handle="allocation_link"] a:hover {
+    color: #ea182c; /* Still red on hover */
+}
+/* ======================================================= */
+
+.ecp_Dashboard .ecp-item-list li a {
+    color: #d4d4d8; /* Style links zinc-300 (off-white grey) */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.ecp_Dashboard .ecp-item-list li a:hover {
+    color: #ea182c; /* Red on hover */
+    text-decoration: underline;
+}
+
+/* === ADDED: Order History List Styles === */
+.ecp_Orders .ecp-x-list[data-ecp-handle="orders"] {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.ecp_Orders .ecp-list-item {
+    background-color: #1a1a1a !important; /* Dark background for the item */
+    padding: 1rem 1.5rem; /* Adjust padding */
+    margin-bottom: 1rem; /* Space below item */
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 8px; /* Add rounded corners */
+    /* border-bottom: 1px solid #333; Remove individual border */
+}
+
+.ecp_Orders .ecp-list-item:last-child {
+    border-bottom: 1px solid #333; /* Keep border on last item if using this style */
+    margin-bottom: 0;
+}
+
+.ecp_Orders .ecp-card-topper {
+    font-size: 0.9rem;
+    color: #aaa; /* Lighter grey for topper info */
+    margin-bottom: 1rem; /* Increase space below topper */
+    padding: 0; /* Remove padding */
+}
+
+.ecp_Orders .ecp-card-topper .ecp-right {
+    float: right;
+}
+
+.ecp_Orders .ecp-card {
+    background-color: transparent !important; /* Ensure card itself is transparent */
+    padding: 0; /* Remove padding */
+    color: #d4d4d8; /* Default text color (zinc-300) */
+}
+
+.ecp_Orders .ecp-card h4 {
+    font-size: 1.1rem; /* Slightly larger header */
+    font-weight: 600;
+    color: #ffffff; /* White header */
+    margin-bottom: 0.75rem; /* Adjust space */
+}
+
+.ecp_Orders .ecp-address {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: #d4d4d8; /* Ensure address lines are visible */
+}
+
+.ecp_Orders .ecp-address dt {
+    font-weight: 600; /* Bolder name */
+    color: #ffffff; /* White name/label */
+    margin-bottom: 0.25rem; /* Space below name */
+}
+
+.ecp_Orders .ecp-card .ecp-clearfix {
+    font-size: 0.9rem;
+    color: #f4f4f5; /* Brighter status text (zinc-100) */
+    margin-top: 1rem; /* Add space above status line */
+}
+
+.ecp_Orders .ecp-card .ecp-clearfix .ecp-right {
+    float: right;
+}
+
+.ecp_Orders .ecp-card .ecp-clearfix a {
+    color: #f4f4f5; /* Brighter link color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    margin-left: 1rem; /* Space between status and link */
+}
+
+.ecp_Orders .ecp-card .ecp-clearfix a:hover {
+    color: #ea182c; /* Red on hover */
+    text-decoration: underline;
+}
+
+/* Adjust button spacing */
+.ecp_Orders .ecp-form button[data-ecp-action="load-dashboard"] {
+    margin-top: 1.5rem;
+}
+/* ===================================== */
+
+/* === ADDED: Order Detail Product List Styles (match Order Review Cart) === */
+.ecp_OrderDetail .ecp-x-list[data-ecp-handle="products"] {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    background: rgba(26, 26, 26, 0.8); /* Match Order Review list background */
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.ecp_OrderDetail .ecp-x-list[data-ecp-handle="products"] .ecp-list-item {
+    padding: 0.75rem 1rem; /* Match padding */
+    border-bottom: 1px solid #333;
+    margin: 0;
+}
+
+.ecp_OrderDetail .ecp-x-list[data-ecp-handle="products"] .ecp-list-item:last-child {
+    border-bottom: none;
+}
+
+/* Center Title */
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(1) h4 {
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    line-height: 1.3;
+    margin: 0 0 0.25rem 0; /* Add small bottom margin */
+    padding: 0;
+    text-align: center; /* Center the title */
+}
+
+/* Hide Price Row (Row 2) Elements - Typically we hide the individual price */
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(2) {
+    display: none !important; /* Hide the whole price row for consistency */
+}
+/* --- OR --- If you need to show row 2, style like this:
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(2) .ecp-grid-col-1, 
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(2) .ecp-grid-col-3, 
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(2) span[data-ecp-handle="discounted"] {
+    display: none !important;
+}
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(2) .ecp-price {
+    display: block;
+    text-align: center; 
+    color: #d4d4d8;
+    font-size: 0.9rem;
+    margin-top: -0.25rem; 
+}
+*/
+
+/* Style Quantity/Total Row (Row 3) */
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(3) {
+    width: 100%;
+    display: flex !important;
+    justify-content: center; /* Center the flex items */
+    align-items: center;
+    gap: 2rem; /* Match gap */
+    margin: 0.25rem 0 0 0;
+    padding: 0;
+}
+
+/* Hide Labels/Spacers in Row 3 */
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-1,
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-3 {
+    display: none !important;
+}
+
+/* Quantity Value */
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-2 {
+    min-width: auto;
+    width: 70px; /* Match fixed width */
+    text-align: left;
+    color: #fff;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5ch;
+    flex-shrink: 0;
+}
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-2::before {
+    content: 'Qty:';
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 400;
+}
+
+/* Total Value */
+.ecp_OrderDetail .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-6 {
+    min-width: auto;
+    width: 70px; /* Set similar fixed width */
+    text-align: right;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* Hide CRV Row */
+.ecp_OrderDetail .ecp-list-item div[data-ecp-handle="crv_deposit"] {
+    display: none !important;
+}
+/* ============================================================================ */ 
+
+/* === MODIFIED: Product List Styles (Minimal Dark Theme) === */
+/* Apply to any product list using this handle */
+.ecp-x-list[data-ecp-handle="products"] {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    background: transparent; /* No list background */
+    border: none; /* No list border */
+    border-radius: 0;
+}
+
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item {
+    padding: 0.5rem 0; /* Minimal vertical padding, no horizontal */
+    border: none; /* No item border */
+    border-bottom: 1px solid #333; /* Separator */
+    margin: 0;
+    background: transparent !important; /* Ensure item transparent */
+    color: #d4d4d8; /* Default text color */
+}
+
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item:last-child {
+    border-bottom: none;
+}
+
+/* Title */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(1) h4 {
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    line-height: 1.3;
+    margin: 0 0 0.1rem 0; /* Minimal bottom margin */
+    padding: 0;
+    text-align: left; /* Align left */
+}
+
+/* Hide Price Row (Row 2) */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(2) {
+    display: none !important; 
+}
+
+/* Style Quantity/Total Row (Row 3) - Simple Flex */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(3) {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between; /* Space out items */
+    align-items: center;
+    gap: 1rem; 
+    margin: 0.1rem 0 0 0; /* Minimal top margin */
+    padding: 0;
+}
+
+/* Hide Labels/Spacers in Row 3 */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-1,
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-3 {
+    display: none !important;
+}
+
+/* Quantity Value */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-2 {
+    min-width: auto;
+    width: auto; /* Auto width */
+    text-align: left;
+    color: #fff;
+    font-size: 0.9rem; /* Slightly smaller */
+    display: flex;
+    align-items: center;
+    gap: 0.5ch;
+    flex-shrink: 0;
+}
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-2::before {
+    content: 'Qty:';
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 400;
+}
+
+/* Total Value */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item .ecp-grid-row:nth-of-type(3) .ecp-grid-col-6 {
+    min-width: auto;
+    width: auto; /* Auto width */
+    text-align: right;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    /* margin-left: auto; Not needed with space-between */
+}
+
+/* Hide CRV Row */
+.ecp-x-list[data-ecp-handle="products"] .ecp-list-item div[data-ecp-handle="crv_deposit"] {
+    display: none !important;
+}
+/* ============================================================================ */
