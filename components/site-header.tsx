@@ -6,7 +6,6 @@ import { Menu, X, ShoppingCart } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Logo } from "@/components/ui/logo"
 import { cn } from "@/lib/utils"
-import { useRouter } from "next/navigation"
 
 // Add TypeScript declaration for the window property
 declare global {
@@ -34,7 +33,6 @@ const SiteHeader = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hasAnimated, setHasAnimated] = useState(false)
   const headerRef = useRef<HTMLDivElement>(null)
-  const router = useRouter()
 
   // Expose header height through a data attribute for dynamic navs to reference
   useEffect(() => {
@@ -176,16 +174,9 @@ const SiteHeader = ({
               <Link
                 href="/"
                 className="group flex items-center"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (isMenuOpen) {
-                    setIsMenuOpen(false);
-                  }
-                  router.push('/');
-                }}
               >
                 <div className="relative w-[195px] h-[36px]">
-                  <div className="absolute inset-0 transition-transform duration-200 ease-out group-hover:scale-110">
+                  <div className="absolute inset-0 duration-200 ease-out">
                     <Logo
                       variant="white"
                       className="absolute inset-0 transition-opacity duration-200 group-hover:opacity-0"
